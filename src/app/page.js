@@ -1,3 +1,12 @@
-export default function Page() {
-  return <h1 className="underline">Hello, Next.js!</h1>
+import Image from 'next/image'
+import Header from '@/components/Header'
+
+export default function Home() {
+
+  return (
+    <>
+      <Header />
+    </>
+
+  )
 }

@@ -10,7 +10,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 const SocialMedia = () => {
   return (
-    <div className="flex justify-center">         
+    <div className="flex justify-center my-2">         
     <FontAwesomeIcon className="w-4 mx-1" icon={faEnvelope} />
     <FontAwesomeIcon className="w-4 mx-1" icon={faFacebook} />
     <FontAwesomeIcon className="w-4 mx-1" icon={faLinkedin} />

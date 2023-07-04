@@ -3,8 +3,8 @@ import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col min-h-screen ">
-      <div className="bg-slate-700 fixed bottom-0 text-white px-14 py-4">
+    <div className="relative flex flex-col min-h-screen ">
+      <div className="bg-slate-700 absolute bottom-0 text-white px-14 py-4">
         <div className="text-[11px]">
           This project has been funded by the National Institute of Biomedical
           Imaging and Bioengineering, National Institutes of Health, through the

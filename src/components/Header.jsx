@@ -1,8 +1,14 @@
+'use client'
+
 import React from 'react'
+import { NavBar } from './NavBar';
 
 const Header = () => {
+
   return (
-    <div>Header</div>
+    <div>Make My Test Count
+      <NavBar />
+    </div>
   )
 }
 

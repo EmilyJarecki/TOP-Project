@@ -6,7 +6,10 @@ import {NavBar} from './NavBar'
 const Header = () => {
 
   return (
-    <div>Make My Test Count
+    <div className="flex justify-between px-6 pt-12 pb-4">
+      <div>
+        LOGO
+      </div>
       <NavBar />
     </div>
   )

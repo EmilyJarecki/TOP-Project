@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export const NavBar = () => {
-    const [count, setCount] = useState(0);
     const [dropdownOpen, setDropdownOpen] = useState(false);
   
     const toggleDropdown = () => {
@@ -15,12 +14,14 @@ export const NavBar = () => {
     };
   
     return (
-      <div>
         <div>
-          <FontAwesomeIcon icon={faBars} onClick={toggleDropdown} />
+          <FontAwesomeIcon size="2xl" style={{color: "#243558" }} icon={faBars} onClick={toggleDropdown} />
           {dropdownOpen && (
-            <div className="fixed inset-0 flex flex-col justify-between bg-slate-700 z-10">
-              <FontAwesomeIcon style={{color: "#ffffff"}} className="z-20" icon={faX} onClick={closeDropdown} />
+            <div className="fixed inset-0 flex flex-col justify-between bg-hych-subheading-blue z-10">
+                <div className="flex justify-end p-8">
+                <FontAwesomeIcon style={{color: "#ffffff"}} size="2xl" className="z-20" icon={faXmark} onClick={closeDropdown} />
+
+                </div>
               <div className="flex flex-grow justify-center items-center z-20">
                 <ul className="space-y-2 text-white text-3xl py-5">
                   <li className='py-5'>Report My Test</li>
@@ -32,7 +33,6 @@ export const NavBar = () => {
             </div>
           )}
         </div>
-      </div>
     );
   };
   

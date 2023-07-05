@@ -13,7 +13,8 @@ module.exports = {
       colors: {
         'hych-bg-blue': '#606E90',
         'hych-title-blue': '#243C6C',
-        'hych-subheading-blue': '#30528F'
+        'hych-subheading-blue': '#30528F',
+        'footer': '#243558',
       },
       fontFamily: {
         'rubik': ['var(--rubik-font)'],

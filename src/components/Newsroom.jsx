@@ -1,17 +1,13 @@
 import React from 'react'
-import NewsArticle from './NewsArticle'
+import ArticleList from './ArticlesList'
+
 
 const Newsroom = () => {
   return (
     <>
       <h1>Newsroom</h1>
       <p>The latest news and media coverage of MakeMyTestCount.</p>
-      
-      <NewsArticle />
-      <NewsArticle />
-      <NewsArticle />
-      <NewsArticle />
-      <NewsArticle />
+      <ArticleList />
     </>
   )
 }

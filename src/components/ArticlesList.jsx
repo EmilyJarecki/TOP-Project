@@ -1,17 +1,19 @@
 import React from 'react'
-import NewsArticle from './NewsArticle'
+import Article from './Article'
 
 
 const ArticleList = () => {
   return (
     <>
-      <h1>Article List</h1>
+      <p>(Article List)</p>
       <div className="grid grid-cols-2">
-        <NewsArticle />
-        <NewsArticle />
-        <NewsArticle />
-        <NewsArticle />
-        <NewsArticle />
+        <Article />
+        <Article />
+        <Article />
+        <Article />
+        <Article />
+        <Article />
+        <Article />
       </div>
     </>
   )

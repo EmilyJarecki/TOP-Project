@@ -3,7 +3,7 @@ import React from 'react'
 function PickSymptoms() {
   return (
     <div>
-      <p>What are your symptoms</p>
+      <p>What are your symptoms??????</p>
     </div>
     
   )

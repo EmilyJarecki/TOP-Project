@@ -2,7 +2,10 @@ import React from 'react'
 
 function PickSymptoms() {
   return (
-    <div>What are your Symptoms</div>
+    <div>
+      <p>What are your symptoms</p>
+    </div>
+    
   )
 }
 

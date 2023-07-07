@@ -4,9 +4,9 @@ import ArticleList from './ArticlesList'
 
 const Newsroom = () => {
   return (
-    <>
-      <p>Newsroom</p>
-      <p>The latest news and media coverage of MakeMyTestCount.</p>
+    < >
+      <p className='text-center'>Newsroom</p>
+      <p className='text-center'>The latest news and media coverage of MakeMyTestCount.</p>
       <ArticleList />
     </>
   )

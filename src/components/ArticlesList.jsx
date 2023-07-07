@@ -4,9 +4,8 @@ import Article from './Article'
 
 const ArticleList = () => {
   return (
-    <>
-      <p>(Article List)</p>
-      <div className="grid grid-cols-2">
+    <div className='flex justify-center items-center'>
+      <div className="grid grid-cols-2 gap-x-7 gap-y-4">
         <Article />
         <Article />
         <Article />
@@ -15,7 +14,7 @@ const ArticleList = () => {
         <Article />
         <Article />
       </div>
-    </>
+    </div>
   )
 }
 

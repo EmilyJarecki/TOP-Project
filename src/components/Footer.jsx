@@ -35,7 +35,7 @@ const Footer = () => {
         <SocialMedia />
         <p className="text-[6px] text-center">
           @ 2023 CareEvolution, LLC. |{" "}
-          <span className="hover:underline">Privacy Policy</span>
+            <span className="hover:underline">Privacy Policy</span>
         </p>
       </div>
     </div>

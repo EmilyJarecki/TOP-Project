@@ -26,7 +26,7 @@ export const NavBar = () => {
               <div className="flex flex-grow justify-center items-center z-20">
                 <ul className="space-y-2 text-white text-3xl py-5">
                   {/* where does this go? */}
-                  <li className='py-5'>Report My Test</li> 
+                  <li className='py-5'><Link href="/">Report My Test</Link></li> 
                   <li className='py-5'><Link href="/faq">FAQs</Link></li>
                   <li className='py-5'><Link href="/about">About Us</Link></li>
                   <li className='py-5'><Link href="/resources">Resources</Link></li>

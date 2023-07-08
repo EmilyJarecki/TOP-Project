@@ -1,5 +1,5 @@
 import React from 'react'
-import Article from './Article'
+// import Article from './Article'
 import Image from 'next/image';
 import cbs from "../assets/cbs.png";
 import abc from "../assets/abc.png";
@@ -14,25 +14,25 @@ const ArticleList = () => {
   return (
     <div className='flex justify-center items-center'>
       <div className="grid grid-cols-2 gap-x-7 gap-y-4">
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg">
           <Image src={abc} alt="abc article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={cbs} alt="cbs article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={nih} alt="nih article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={time} alt="time article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={verywell} alt="verywell article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={marketwatch} alt="market watch article"></Image>
         </div>
-        <div className="h-56 w-32 border-2 ">
+        <div className="h-56 w-32 shadow-lg ">
           <Image src={whitehouse} alt="white house article"></Image>
         </div>
       </div>

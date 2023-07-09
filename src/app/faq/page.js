@@ -42,6 +42,7 @@ export default function Faq() {
         </center>
             <div className="accordion-item">
             <p className="flex relative justify-between items-center pt-6 pb-8 w-full text-left-[13px]  ease-out duration-500 font-rubik font-bold text-hych-subheading-blue leading-none tracking-tight">Who can see my results</p>
+            
             </div>
         <Footer />
         </>

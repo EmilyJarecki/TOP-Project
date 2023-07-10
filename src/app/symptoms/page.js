@@ -1,8 +1,10 @@
+import PickSymptoms from "@/components/PickSymptoms"
+
 export default function Symptoms() {
 
     return (
         <>
-            <h1>This is the Symptoms page</h1>
+            <PickSymptoms />
             <a className="underline text-blue-500" href="/">Go BACK</a>
         </>
 

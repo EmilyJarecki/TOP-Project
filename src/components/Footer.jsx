@@ -2,6 +2,7 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import Image from "next/image";
 import logo from "../assets/makeMyTestCount.png";
+import Privacy from "@/app/privacy/page";
 
 const Footer = () => {
   return (
@@ -35,7 +36,9 @@ const Footer = () => {
         <SocialMedia />
         <p className="text-[6px] text-center">
           @ 2023 CareEvolution, LLC. |{" "}
+          <a href="privacy">
             <span className="hover:underline">Privacy Policy</span>
+            </a>
         </p>
       </div>
     </div>

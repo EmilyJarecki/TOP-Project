@@ -3,6 +3,8 @@ import Header from '@/components/Header';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Inter, Rubik } from 'next/font/google';
+import Landing from '@/components/Landing'
+
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--rubik-font' });
 
@@ -13,7 +15,7 @@ export default function Home() {
   return (
     <main className={`${rubik.variable} ${inter.variable}`}>
       <Header />
-      <h1>This is the Landing Page</h1>
+      <Landing />
       <Footer />
     </main>
 

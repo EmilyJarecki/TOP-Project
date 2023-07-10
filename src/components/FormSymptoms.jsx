@@ -4,6 +4,7 @@ import React from "react";
 function FormSymptoms() {
 return (
     <div>
+      <p>Page 2 of 2</p>
       <form action="/" method="post">
 
       <label for="date">Date of Test:</label>

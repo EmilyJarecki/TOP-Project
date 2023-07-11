@@ -2,6 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    flex: {
+      'carousel-mobile': '0 0 127px'
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -12,6 +15,7 @@ module.exports = {
         "hych-bg-blue": "#606E90",
         "hych-title-blue": "#243C6C",
         "hych-subheading-blue": "#30528F",
+        "temp": "#E4EAEE",
         footer: "#243558",
       },
       fontFamily: {

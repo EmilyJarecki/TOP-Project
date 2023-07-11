@@ -34,4 +34,4 @@ function SiteInfo() {
   )
 }
 
-export default SiteInfo
+export default SiteInfo;

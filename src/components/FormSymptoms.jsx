@@ -4,7 +4,7 @@ import React from "react";
 function FormSymptoms() {
 return (
     <div>
-      <p>Page 2 of 2</p>
+      <p className='flex items-center justify-center font-semibold text-[#30528F]'>Page 2 of 2</p>
       <form action="/" method="post">
 
       <label for="date">Date of Test:</label>
@@ -26,7 +26,7 @@ return (
 
       <p>Additional Information</p>
       <p>Enter more info to enter yourself into our lottery?</p>
-      <button type="submit">Submit</button>
+      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]">Submit</button>
       </form>
     </div>
   )

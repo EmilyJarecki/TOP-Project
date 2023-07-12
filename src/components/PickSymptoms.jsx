@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Abdominal from "../assets/symptoms/abdominal.png"
 import Breathing from "../assets/symptoms/breathing.png"
@@ -77,11 +78,9 @@ const symptomsData = [
 function PickSymptoms() {
   return (
     <>
-    <div>
-      <p>Page 1 of 2</p>
-    </div>
-    <div>
-      <p>What are your symptoms?</p>
+    <div className='flex flex-col items-center justify-center text-[#30528F]'>
+      <p className='font-semibold'>Page 1 of 2</p>
+      <p className='font-medium'>What are your symptoms?</p>
     </div>
     <div className='grid grid-cols-3'>
         {symptomsData.map((item) => (
@@ -98,8 +97,12 @@ function PickSymptoms() {
         ))}
     </div>
     <div className='flex items-center justify-center'>
-      <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
-      <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]">Continue</button>
+      <Link href='/symptoms2'>
+        <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
+      </Link>
+      <Link href='/symptoms2'>
+        <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]">Continue</button>
+      </Link>
     </div>
     </>
   )

@@ -37,7 +37,7 @@ export default function Faq() {
             </p>
         <br />
             <p className="flex justify-center pr-[1.875rem] pb-[1.25rem] text-[13px]  ease-out duration-500 font-rubik font-bold text-hych-subheading-blue leading-none tracking-tight">
-            <button onclick="underlineLinks()"><a href="https://report.makemytestcount.org/?&_ga=2.182742113.636952924.1688858707-1823723452.1688596346#Step01">Want to report a test? It's easy!</a></button>
+            <button onclick="underlineLinks()"><a href="https://report.makemytestcount.org/?&_ga=2.182742113.636952924.1688858707-1823723452.1688596346#Step01">Want to report a test? It&apos;s easy!</a></button>
             </p>
         </center>
             <div className="accordion-item">

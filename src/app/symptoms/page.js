@@ -10,10 +10,10 @@ export default function Symptoms() {
         <>
             <Header />
             <PickSymptoms />
-            <FormSymptoms />
+            {/* <FormSymptoms />
             <PopUpResults />
             <a className="underline text-blue-500" href="/">Go BACK</a>
-            <Footer/>
+            <Footer/> */}
         </>
 
     )

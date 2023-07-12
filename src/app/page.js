@@ -16,13 +16,13 @@ export default function Home() {
       <Header />
       <div className='flex flex-col items-center justify-center font-bold text-[#30528F]' >
         <Link href='/symptoms'>
-          <button className='shadow-md rounded-xl px-20 my-2'>Positive</button>
+          <button className='shadow-md rounded-xl px-20 my-3'>Positive</button>
         </Link>
         <Link href='/symptoms2'>
-          <button className='shadow-md rounded-xl px-20 my-2'>Negative</button>
+          <button className='shadow-md rounded-xl px-20 my-3'>Negative</button>
         </Link>
         {/* <Link > */}
-          <button className='shadow-md rounded-xl px-20 my-2'>Take a Photo to be Sure!</button>
+          <button className='shadow-md rounded-xl px-20 my-3'>Take a Photo to be Sure!</button>
         {/* </Link> */}
       </div>
       <AdditionalResourcesCarousel></AdditionalResourcesCarousel>

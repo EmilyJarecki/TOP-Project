@@ -1,0 +1,1 @@
+import Abdominal from "./abdominal.png"

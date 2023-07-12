@@ -8,12 +8,15 @@ export default function Symptoms() {
 
     return (
         <>
-            <Header />
-            <PickSymptoms />
-            {/* <FormSymptoms />
-            <PopUpResults />
-            <a className="underline text-blue-500" href="/">Go BACK</a>
-            <Footer/> */}
+            <div className="bg-[#E4EAEE]">
+                <Header />
+                <PickSymptoms />
+                {/* <FormSymptoms />
+                <PopUpResults />
+                <a className="underline text-blue-500" href="/">Go BACK</a>
+                <Footer/> */}
+            </div>
+            
         </>
 
     )

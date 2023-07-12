@@ -6,7 +6,7 @@ const Landing = () => {
     <div className='flex justify-center items-center'>
       <div className='flex flex-col'>
         <p>12,345 positive tests today</p>
-        <Image src={map}></Image>
+        <Image src={map} alt='map of the united states'></Image>
         <button>Positive</button>
         <button>Negative</button>
         <button>Photo</button>

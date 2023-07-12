@@ -6,47 +6,99 @@ import Image from 'next/image';
 import holdingHands from '../assets/addtl-rsrc-holding-hands.png';
 import codeScreen from '../assets/addtl-rsrc-code.png';
 import covidTest from '../assets/addtl-rsrc-testing.png';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function AdditionalResourcesCarousel() {
 
-    const [emblaRef] = useEmblaCarousel();
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 3 });
+    const [carouselIndex, setCarouselIndex] = useState(0);
+
+    const onSelect = useCallback((emblaApi, eventName) => {
+
+        setCarouselIndex(emblaApi.selectedScrollSnap());
+
+    });
+
+    useEffect(() => {
+
+        if (emblaApi) emblaApi.on('select', onSelect);
+
+    }, [emblaApi]);
+
+
 
     return (
 
-        <div className="m-4 bg-temp">
+        <div className="mx-auto max-w-sm px-3.5">
             <div className="flex justify-center gap-1.5">
-                <div className="bg-blue-500 h-2.5 w-2.5 rounded-full"></div>
-                <div className="bg-blue-500 h-2.5 w-2.5 rounded-full"></div>
-                <div className="bg-blue-500 h-2.5 w-2.5 rounded-full"></div>
+                <div className={`${carouselIndex == 0 || carouselIndex == 3 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 1 || carouselIndex == 4 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 2 || carouselIndex == 5 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
             </div>
             <div className="flex justify-between mt-2 items-end">
                 <p className="font-bold text-[14pt] tracking-tight">Additional Resources</p>
-                <p className="underline text-sm mr-1">See All</p>
+                <Link href="/resources"><p className="underline text-sm mr-1">See All</p></Link>
             </div>
             <div className="embla overflow-hidden mt-2" ref={emblaRef}>
-                <div className="embla__container flex gap-3">
-                    <div className="embla__slide flex-carousel-mobile min-w-0">
+                <div className="embla__container flex">
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
                         <div>
-                            <div className="rounded-xl overflow-hidden">
-                                <Image src={holdingHands} alt="holding-hands-image"></Image>
-                                <p className="text-sm font-medium leading-none p-2 bg-white">We're here to support you</p>
-                            </div>
+                            <Link href="/faq">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={holdingHands} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">We're here to support you</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                    <div className="embla__slide flex-carousel-mobile min-w-0">
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
                         <div>
-                            <div className="rounded-xl overflow-hidden">
-                                <Image src={codeScreen} alt="holding-hands-image"></Image>
-                                <p className="text-sm font-medium leading-none p-2 bg-white">Your information is secure</p>
-                            </div>
+                            <Link href="privacy">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={codeScreen} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">Your information is secure</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                    <div className="embla__slide flex-carousel-mobile min-w-0">
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
                         <div>
-                            <div className="rounded-xl overflow-hidden">
-                                <Image src={covidTest} alt="holding-hands-image"></Image>
-                                <p className="text-sm font-medium leading-none p-2 bg-white">You're part of the future of testing</p>
-                            </div>
+                            <Link href="/about">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={covidTest} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">You're part of the future of testing</p>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
+                        <div>
+                            <Link href="/faq">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={holdingHands} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">We're here to support you</p>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
+                        <div>
+                            <Link href="/privacy">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={codeScreen} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">Your information is secure</p>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="embla__slide flex-carousel-mobile min-w-0 mr-3">
+                        <div>
+                            <Link href="/about">
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image src={covidTest} alt="holding-hands-image"></Image>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">You're part of the future of testing</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,6 @@ module.exports = {
         "hych-bg-blue": "#606E90",
         "hych-title-blue": "#243C6C",
         "hych-subheading-blue": "#30528F",
-        "temp": "#E4EAEE",
         footer: "#243558",
       },
       fontFamily: {

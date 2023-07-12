@@ -12,6 +12,7 @@ const Header = () => {
     <div className="flex justify-between px-6 pt-12 pb-4">
       <div>
         <Image className="w-20" src={logo} alt="makemytestcount.org"></Image>
+      Hello World
       </div>
       <NavBar />
     </div>

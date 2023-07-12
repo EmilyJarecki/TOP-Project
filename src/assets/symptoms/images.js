@@ -10,6 +10,8 @@ import Muscle from "./muscle.png"
 import Nausea from "./nausea.png"
 import Nose from "./nose.png"
 import Rash from "./rash.png"
+import Conjunctivits from "./conjunctivitis.png"
+import Other from "./other.png"
 
 export default {
     abdominal: Abdominal,
@@ -24,5 +26,7 @@ export default {
     nausea: Nausea,
     nose: Nose,
     rash: Rash,
+    conjunctivits: Conjunctivits,
+    other: Other,
 }
 

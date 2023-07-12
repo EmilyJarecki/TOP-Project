@@ -5,7 +5,7 @@ import Container from "postcss/lib/container";
 function SiteInfo() {
   return (
     <div className="box-border h-70 w-50 p-10">
-      <div className="container mx-auto px-40">
+      <div className="container mx-auto text-center">
         <p className="text-5xl font-medium flex place-content-center text-hych-title-blue">About Us</p>
         <br />
         <p className="text-sm flex text-hych-subheading-blue">Before the pandemic, medical tests were nearly always done at health care 

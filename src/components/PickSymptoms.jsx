@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const symptomsData = [
   {
@@ -62,6 +62,24 @@ function PickSymptoms() {
   return (
     <div>
       <p>What are your symptoms??????</p>
+    </div>
+    <div className='grid grid-cols-3'>
+        {symptomsData.map((item) => (
+          <button>
+            <div grid grid-cols-2 gap-4 justify-center items-center>
+              <Image
+                className="w-20 rounded-xl bg-white"
+                src={item.image}
+                alt={item.name} icon
+              />
+              <p>{item.name}</p>
+            </div>
+          </button>
+        ))}
+    </div>
+    <div className='flex items-center justify-center'>
+      <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
+      <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]">Continue</button>
     </div>
     </>
   )

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function PopUpResults() {
   return (
-    <div>
+    <div className="hidden">
       <p>Your Results Have Been Submitted!</p>
       <div>
         <p>image</p>

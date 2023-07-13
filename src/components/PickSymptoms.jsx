@@ -65,7 +65,7 @@ function PickSymptoms() {
     </div>
     <div className='grid grid-cols-3'>
         {symptomsData.map((item) => (
-          <button>
+          <button key={item.id}>
             <div grid grid-cols-2 gap-4 justify-center items-center>
               <Image
                 className="w-20 rounded-xl bg-white"

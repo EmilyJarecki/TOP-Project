@@ -1,19 +1,19 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PickSymptoms from "@/components/PickSymptoms"
+import FormSymptoms from "@/components/FormSymptoms";
+import PopUpResults from "@/components/PopUpResults";
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 
-export default function Symptoms() {
+export default function Symptoms2() {
 
     return (
         <>
             <div className="bg-[#E4EAEE]">
                 <Header />
-                <PickSymptoms />
-                {/* <FormSymptoms />
+                <FormSymptoms />
                 <PopUpResults />
-                <a className="underline text-blue-500" href="/">Go BACK</a>
-                <Footer/> */}
+                <AdditionalResourcesCarousel />
+                <Footer/>
             </div>
             
         </>

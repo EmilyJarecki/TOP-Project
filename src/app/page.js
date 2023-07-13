@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Inter, Rubik } from 'next/font/google';
 import Landing from '@/components/Landing'
 
+import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--rubik-font' });
 
@@ -16,6 +17,8 @@ export default function Home() {
     <main className={`${rubik.variable} ${inter.variable}`}>
       <Header />
       <Landing />
+      <h1>This is the Landing Page</h1>
+      <AdditionalResourcesCarousel></AdditionalResourcesCarousel>
       <Footer />
     </main>
 

@@ -7,9 +7,7 @@ const Landing = () => {
       <div className='flex flex-col'>
         <p>12,345 positive tests today</p>
         <Image src={map} alt='map of the united states'></Image>
-        <button>Positive</button>
-        <button>Negative</button>
-        <button>Photo</button>
+        
         <p>Submit your Results and enter a lottery!</p>
         <p>Why Your Test Results Matter</p>
         <div>

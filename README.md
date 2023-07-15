@@ -20,9 +20,10 @@
 ![github logo](/src/assets/github.png) [Youssef Shabo](https://github.com/YoussefShabo)<br/>
 
 #### UI/UX
-
+![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza](https://www.linkedin.com/in/ralph-john-rezza/)
 
 #### Data Science
+
 
 ### 🗜️ Technologies Used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)<br />

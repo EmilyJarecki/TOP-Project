@@ -1,13 +1,9 @@
-"use client"
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+
 
 
 function PopUpResults() {
-  // const [showPopUpResults, setShowPopUpResults] = useState(false);
-
-
   return (
     <div className="text-hych-title-blue container mx-auto text-center">
         <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>

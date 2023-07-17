@@ -11,7 +11,6 @@ export default function Symptoms2() {
             <div className="bg-[#E4EAEE]">
                 <Header />
                 <FormSymptoms />
-                <PopUpResults />
                 <AdditionalResourcesCarousel />
                 <Footer/>
             </div>

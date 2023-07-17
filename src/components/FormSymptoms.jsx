@@ -1,7 +1,12 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
+import Modal from "react-modal";
+import PopUpResults from "./PopUpResults";
 
 
 function FormSymptoms() {
+  const [isOpen, setIsOpen] = useState(false);
+
 return (
     <div>
       <p className='flex items-center justify-center font-semibold text-[#30528F]'>Page 2 of 2</p>
@@ -26,7 +31,10 @@ return (
 
       <p>Additional Information</p>
       <p>Enter more info to enter yourself into our lottery?</p>
-      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]">Submit</button>
+      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]" onClick={() => setIsOpen(true)}>Submit</button>
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+        <PopUpResults />
+      </Modal>
       </form>
     </div>
   )

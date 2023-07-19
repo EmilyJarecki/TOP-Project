@@ -1,4 +1,4 @@
-const dbConnect = require('../lib/page')
+import dbConnect from '../lib/page'
 
 const handler = async (req, res) => {
   const { method } = req

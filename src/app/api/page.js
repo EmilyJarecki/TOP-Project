@@ -1,4 +1,4 @@
-import dbConnect from '../lib/page'
+import dbConnect from '../../../lib/dbConnect'
 
 const handler = async (req, res) => {
   const { method } = req
@@ -6,8 +6,7 @@ const handler = async (req, res) => {
     case 'GET': {
       await dbConnect()
       res.json({ ok: true })
-      break
     }
   }
 }
-module.exports = handler
+export default handler

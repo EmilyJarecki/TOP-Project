@@ -3,7 +3,7 @@ import {
   createInfo,
   updateInfo,
   deleteInfo
-} from '../../controllers/infoController'
+} from '../../../controllers/infoController'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -15,6 +15,6 @@ export default async function handler(req, res) {
   } else if (req.method === 'DELETE') {
     return deleteInfo(req, res)
   } else {
-    res.status(405).json({ error: 'Method Not Allowed' })
+    console.log('Method Not Allowed')
   }
 }

@@ -26,9 +26,9 @@ In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are criti
 ![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza](https://www.linkedin.com/in/ralph-john-rezza/)
 
 #### Data Science
-![github logo](/src/assets/github.png) [Bekzod Tolipov](https://github.com/BekzodTolipov/BekzodTolipov)<br/>
-![github logo](/src/assets/github.png) [Dan Rossetti](https://github.com/drossDS)<br/>
-![github logo](/src/assets/github.png) [Ricky Everest]()<br/>
+![linkedin logo](/src/assets/linkedin.png) [Bekzod Tolipov](https://www.linkedin.com/in/bekzod-tolipov/)<br/>
+![linkedin logo](/src/assets/linkedin.png) [Dan Rossetti](https://www.linkedin.com/in/dan-rossetti/)<br/>
+![linkedin logo](/src/assets/linkedin.png) [Ricky Everest](https://www.linkedin.com/in/ricky-everest/)<br/>
 
 ### 🗜️ Technologies Used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)<br />

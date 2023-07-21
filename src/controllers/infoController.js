@@ -1,7 +1,9 @@
+import dbConnect from '../../lib/dbConnect'
 import Info from '../../models/info'
 
 const infoController = {
   getInfo: async (req, res) => {
+    await dbConnect()
     try {
       const info = await Info.find({})
       res.status(200).json(info)
@@ -23,6 +25,7 @@ const infoController = {
       PhoneNumber,
       MedicalHistory
     } = req.body
+    await dbConnect()
     try {
       const newForm = await Info.create({
         Date,
@@ -44,6 +47,7 @@ const infoController = {
   },
   getFormById: async (req, res) => {
     const infoId = req.params.id
+    await dbConnect()
     try {
       const info = await Info.findById(infoId)
       if (!info) {
@@ -69,6 +73,7 @@ const infoController = {
       PhoneNumber,
       MedicalHistory
     } = req.body
+    await dbConnect()
     try {
       const updatedInfo = await Info.findByIdAndUpdate(
         infoId,
@@ -97,6 +102,7 @@ const infoController = {
   },
   deleteInfo: async (req, res) => {
     const infoId = req.params.id
+    await dbConnect()
     try {
       const deletedinfo = await Info.findByIdAndDelete(infoId)
       if (!deletedinfo) {

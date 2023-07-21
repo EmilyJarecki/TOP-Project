@@ -1,16 +1,14 @@
-import dbConnect from '../lib/dbConnect'
+import clientPromise from '../../../lib/dbConnect'
 
-const handler = async (req, res) => {
+export default async (req, res) => {
   try {
-    const { method } = req
-    switch (method) {
-      case 'GET': {
-        await dbConnect()
-        res.json({ ok: true })
-      }
-    }
-  } catch (error) {
-    console.log('GET failed:', error)
+    const client = await clientPromise
+    const InfoModel = client.model('Info')
+    const info = await InfoModel.find({}).limit(20).exec()
+
+    return info
+  } catch (e) {
+    console.error(e)
+    throw new Error(e).message
   }
 }
-export default handler

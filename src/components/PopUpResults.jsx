@@ -12,12 +12,13 @@ function PopUpResults() {
   return (
     <div className="text-hych-title-blue container mx-auto text-center">
       <div>
-        <Image src={covidImg1} alt="covid" className="bg-local"></Image>
+        {/* <Image src={covidImg1} alt="covid" className="bg-local"></Image> */}
           <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>
         <div>
           <br />
-          <Image src={check} alt="check"></Image>
+          <Image src={check} alt="check" className=""></Image>
         </div>
+        
         <br />
           <div>
             <p className="text-1xl font-medium flex place-content-center">What Should I Do If I Tested Positive For Covid-19</p>

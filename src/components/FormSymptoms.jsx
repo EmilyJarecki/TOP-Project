@@ -6,12 +6,29 @@ import PopUpResults from "./PopUpResults";
 
 function FormSymptoms() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
+
+  const handleInputChange = () => {
+    const dataInput = document.getElementById('date').value;
+    const ageInput = document.getElementById('age').value;
+    const raceInput = document.getElementById('race').value;
+    const sexInput = document.getElementById('sex').value;
+    const zipInput = document.getElementById('zip').value;
+
+    setIsFormComplete(dataInput && ageInput && raceInput && sexInput && zipInput);
+  };
+
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsOpen(true); 
+  };
 
 return (
     <div>
       <p className='flex items-center justify-center font-semibold text-[#30528F]'>Page 2 of 2</p>
-      <form action="/" method="post">
+      <form action="/" method="post" onSubmit={handleSubmit}>
 
       <label for="date">Date of Test:</label>
       <input type="number" id="date" name="date" required />
@@ -32,13 +49,15 @@ return (
 
       <p>Additional Information</p>
       <p>Enter more info to enter yourself into our lottery?</p>
-      <button type="button" className="rounded-xl px-20 text-white bg-[#30528F]" onClick={() => setIsOpen(true)}>Submit</button>
+      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]">Submit</button>
+      </form>
+      {isOpen && (
       <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
         <PopUpResults />
       </Modal>
-      </form>
+      )}
     </div>
   )
 }
 
-export default FormSymptoms
+export default FormSymptoms;

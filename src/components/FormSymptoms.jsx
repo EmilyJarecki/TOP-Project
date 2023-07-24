@@ -31,25 +31,25 @@ return (
       <form action="/" method="post" onSubmit={handleSubmit}>
 
       <label for="date">Date of Test:</label>
-      <input type="number" id="date" name="date" required />
+      <input type="number" id="date" name="date" required onChange={handleInputChange}/>
       <br />
 
       <label for="age">Age Range:</label>
-      <input type="number" id="age" name="age" required />
+      <input type="number" id="age" name="age" required onChange={handleInputChange}/>
 
       <label for="race">Race:</label> <br />
-      <input type="text" id="race" name="race" required />
+      <input type="text" id="race" name="race" required onChange={handleInputChange}/>
       <br />
 
       <label for="sex">Sex:</label>
-      <input type="text" id="sex" name="sex" required />
+      <input type="text" id="sex" name="sex" required onChange={handleInputChange}/>
 
       <label for="zip">Zip Code</label>
-      <input type="number" id="zip" name="zip" required minLength="5" maxLength="5" />
+      <input type="number" id="zip" name="zip" required minLength="5" maxLength="5" onChange={handleInputChange}/>
 
       <p>Additional Information</p>
       <p>Enter more info to enter yourself into our lottery?</p>
-      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]">Submit</button>
+      <button type="submit" className="rounded-xl px-20 text-white bg-[#30528F]" disabled={!isFormComplete}>Submit</button>
       </form>
       {isOpen && (
       <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>

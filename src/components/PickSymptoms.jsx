@@ -52,7 +52,7 @@ const symptomsData = [
     image: Fatigue,
   },
   {
-    name: "Nausea/Vomiting",
+    name: "Nausea/ Vomiting",
     image: Nausea,
   },
   {
@@ -91,14 +91,14 @@ function PickSymptoms() {
 
     <div className='grid grid-cols-3 m-4 shadow-slate-900'>
         {symptomsData.map((item) => (
-          <button key={item.id} className="w-24 bg-white mx-2 rounded-lg place-content-center">
+          <button key={item.id} className="w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center">
             <div className="grid justify-center items-center">
               <Image
                 className="w-24"
                 src={item.image}
                 alt={item.name} icon
               />
-              <p className="text-sm">{item.name}</p>
+              <p className="text-sm z-10 absolute bottom-0 text-center w-24 bg-white-500 opacity-80"><span className="">{item.name}</span></p>
             </div>
           </button>
         ))}

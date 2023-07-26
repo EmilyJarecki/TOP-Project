@@ -16,6 +16,7 @@ import Nose from "../assets/symptoms/nose.png"
 import Rash from "../assets/symptoms/rash.png"
 import Conjunctivitis from "../assets/symptoms/conjunctivitis.png"
 import Other from "../assets/symptoms/other.png"
+import None from "../assets/symptoms/none.png"
 
 const symptomsData = [
   {
@@ -39,7 +40,7 @@ const symptomsData = [
     image: Muscle,
   },
   {
-    name: "Lost of Smell",
+    name: "Loss of Smell",
     image: Nose,
   },
   {
@@ -74,6 +75,10 @@ const symptomsData = [
     name: "Other",
     image: Other,
   },
+  {
+    name: "No Symptoms",
+    image: None,
+  },
 ]
 function PickSymptoms() {
   return (
@@ -82,20 +87,25 @@ function PickSymptoms() {
       <p className='font-semibold'>Page 1 of 2</p>
       <p className='font-medium'>What are your symptoms?</p>
     </div>
-    <div className='grid grid-cols-3'>
+
+
+    <div className='grid grid-cols-3 m-4 shadow-slate-900'>
         {symptomsData.map((item) => (
-          <button key={item.id}>
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+          <button key={item.id} className="w-24 bg-white mx-2 rounded-lg place-content-center">
+            <div className="grid justify-center items-center">
               <Image
-                className="w-20 rounded-xl bg-white"
+                className="w-24"
                 src={item.image}
                 alt={item.name} icon
               />
-              <p>{item.name}</p>
+              <p className="text-sm">{item.name}</p>
             </div>
           </button>
         ))}
     </div>
+
+
+
     <div className='flex items-center justify-center'>
       <Link href='/symptoms2'>
         <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>

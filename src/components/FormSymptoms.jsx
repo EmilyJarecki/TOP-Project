@@ -256,15 +256,15 @@ function FormSymptoms() {
                   )}
                 </div>
               ) : (
-                <p className={classNames(inputBox, "w-full mb-4")}>
-                  There is nothing here.
+                <p className={classNames(inputBox, "w-full mb-4")} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                   Click here
                 </p>
               )}
             </div>
 
             <button
               type="submit"
-              className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full"
+              className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full mt-4"
             >
               Submit
             </button>

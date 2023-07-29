@@ -18,6 +18,7 @@ module.exports = {
         "hych-title-blue": "#243C6C",
         "hych-subheading-blue": "#30528F",
         footer: "#243558",
+        inputfield: "#F4F6F8",
       },
       fontFamily: {
         rubik: ["var(--rubik-font)"],

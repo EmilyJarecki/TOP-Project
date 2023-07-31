@@ -11,17 +11,10 @@ import covidImg1 from "../assets/popUpResults/covidImg1.jpg"
 function PopUpResults() {
   return (
     <div className="text-hych-title-blue container text-center h-max">
-<h1>Hello World. This is the confirmation modal.</h1>
 
-      {/* <div>
+      <div>
         <Image src={covidImg1} alt="covid" className="bg-local">
-
-
         </Image>
-        <div>
-          
-        </div>
-          <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>
         <div>
             <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>
           <div>
@@ -51,7 +44,7 @@ function PopUpResults() {
               <p>Learn more at <span className="underline text-blue-500"><Link href="https://whentotest.org/" target="_blank">WhenToTest.org</Link></span></p>
             </div>
           </div>
-        </div> */}
+        </div>
     </div>
   )
 }

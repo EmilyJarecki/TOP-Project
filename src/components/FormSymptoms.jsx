@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
+import Modal from "react-modal";
+import PopUpResults from "./PopUpResults";
 
 function FormSymptoms() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -70,6 +73,7 @@ function FormSymptoms() {
   const handleSubmit = (values) => {
     // Perform any necessary actions with the form data here
     console.log("Form submitted:", values);
+    setIsOpen(true);
   };
 
   return (
@@ -271,6 +275,11 @@ function FormSymptoms() {
           </Form>
         )}
       </Formik>
+      {isOpen && (
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} ariaHideApp={false}>
+        <PopUpResults />
+      </Modal>
+      )}
     </div>
   );
 }

@@ -15,7 +15,7 @@ function PopUpResults() {
       <div>
         <Image src={covidImg1} alt="covid" className="opacity-60" layout="fill" objectFit="cover">
         </Image>
-        <div className="opacity-90">
+        <div className="opacity-90 bg-white">
           <div>
               <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>
             <div>
@@ -31,7 +31,8 @@ function PopUpResults() {
                 target="_blank">MakeMyTestCount</Link></span> Vision.</p>
               </div>
               <br />
-              <div>
+              <div className="border-t border-gray-300">
+                <br />
                 <p className="text-1xl font-medium flex place-content-center">Your Information Is Secure.</p>
                 <p>All data is managed according to strict federal guidelines.</p>
                 <p>Learn more about this site&apos;s <span className="underline text-blue-500">
@@ -39,11 +40,12 @@ function PopUpResults() {
                   target="_blank">privacy protections</Link></span>.</p>
               </div>
               <br />
-              <div>
+              <div className="border-t border-gray-300">
                 <p className="text-1xl font-medium flex place-content-center">We&apos;re Here To Support You.</p>
                 <p>Up-to-date info helps keep you safe and healthy.</p>
                 <p>Learn more at <span className="underline text-blue-500"><Link href="https://whentotest.org/" target="_blank">WhenToTest.org</Link></span></p>
               </div>
+              <br />
             </div>
           </div>
         </div>

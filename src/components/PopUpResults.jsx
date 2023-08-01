@@ -17,7 +17,7 @@ function PopUpResults() {
         </Image>
         <div className="opacity-90 bg-white">
           <div>
-              <p className="text-1xl font-medium flex place-content-center">Your Results Have Been Submitted!</p>
+              <p className="text-1xl font-semibold flex place-content-center">Your Results Have Been Submitted!</p>
             <div>
               <br />
               <Image src={check} alt="check"></Image>

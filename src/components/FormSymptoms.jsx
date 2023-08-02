@@ -6,7 +6,6 @@ import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
 
-
 const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
@@ -98,7 +97,7 @@ const FormSymptoms = () => {
   return (
     <div className="mx-12 my-8">
       <Formik
-        initialValues={ ...initialValues }
+        initialValues={ initialValues }
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""

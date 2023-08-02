@@ -16,7 +16,6 @@ import Nose from "../assets/symptoms/nose.png"
 import Rash from "../assets/symptoms/rash.png"
 import Conjunctivitis from "../assets/symptoms/conjunctivitis.png"
 import Other from "../assets/symptoms/other.png"
-import None from "../assets/symptoms/none.png"
 
 const symptomsData = [
   {
@@ -40,7 +39,7 @@ const symptomsData = [
     image: Muscle,
   },
   {
-    name: "Loss of Smell",
+    name: "Lost of Smell",
     image: Nose,
   },
   {
@@ -52,7 +51,7 @@ const symptomsData = [
     image: Fatigue,
   },
   {
-    name: "Nausea/ Vomiting",
+    name: "Nausea/Vomiting",
     image: Nausea,
   },
   {
@@ -74,10 +73,6 @@ const symptomsData = [
   {
     name: "Other",
     image: Other,
-  },
-  {
-    name: "No Symptoms",
-    image: None,
   },
 ]
 function PickSymptoms() {

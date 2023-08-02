@@ -4,8 +4,6 @@
 
 ###[Launch our app 📱](https://top-project.vercel.app/)
 
-(App description)
-
 ####[The Opportunity Project 2023 ](https://opportunity.census.gov/sprints/fda-diagnostic/)
 
 The Opportunity Project facilitates 12-week product development cycles (called “sprints”) that pull together innovators from every sector. Tech teams join a sprint to build data-powered solutions to critical problems facing the public. Then, we match them with subject-matter experts, who offer valuable information and feedback.

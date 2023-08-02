@@ -27,6 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-webcam": "^7.1.1",
     "reactjs-popup": "^2.0.5",
     "sharp": "^0.32.2",
     "yup": "^1.2.0"

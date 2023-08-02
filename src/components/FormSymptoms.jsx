@@ -6,11 +6,13 @@ import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
 
-function FormSymptoms() {
+
+const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -70,21 +72,38 @@ function FormSymptoms() {
     }),
   });
 
-  const handleSubmit = (values) => {
-    // Perform any necessary actions with the form data here
-    console.log("Form submitted:", values);
-    setIsOpen(true);
+  const handleSubmit = async (values, { resetForm }) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      setIsSubmitting(false);
+      resetForm();
+      console.log(values);
+    } catch (error) {
+      console.error("There was an error!", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
+  
   return (
     <div className="mx-12 my-8">
       <Formik
-        initialValues={{ ...initialValues }}
+        initialValues={ ...initialValues }
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""
       >
-        {({ values }) => (
+        {({ isSubmitting }) => (
           <Form>
             <div className="mt-4">
               <label htmlFor="date" className={classNames(commonLabel, "")}>
@@ -204,8 +223,6 @@ function FormSymptoms() {
                 />
               </div>
             </div>
-
-            {/* will be working here */}
             <div>
               <p
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -216,8 +233,6 @@ function FormSymptoms() {
 
               {isDropdownOpen ? (
                 <div className="w-full rounded-lg  bg-inputfield text-zinc-400 font-semibold ">
-                  
-                  
                   <div>
                   <p onClick={() => setIsPhoneOpen(!isPhoneOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
                     Phone Number
@@ -229,18 +244,12 @@ function FormSymptoms() {
                         type="text"
                         id="phoneNumber"
                         name="phoneNumber"
-                        value={values.phoneNumber}
                         className={classNames(inputBox, "w-40 mb-4")}
                       />
                       <ErrorMessage name="phoneNumber" component="div" />
                     </div>
                   )}
                   </div>
-
-
-
-
-
 
                   <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
                     Date of Birth
@@ -252,7 +261,6 @@ function FormSymptoms() {
                         type="date"
                         id="dateOfBirth"
                         name="dateOfBirth"
-                        value={values.dateOfBirth}
                         className={classNames(inputBox, "w-40 mb-4")}
                       />
                       <ErrorMessage name="dateOfBirth" component="div" />
@@ -268,9 +276,10 @@ function FormSymptoms() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full mt-4"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </Form>
         )}
@@ -282,6 +291,6 @@ function FormSymptoms() {
       )}
     </div>
   );
-}
+};
 
 export default FormSymptoms;

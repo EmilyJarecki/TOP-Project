@@ -5,13 +5,18 @@ import * as Yup from "yup";
 import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
+import { useRouter } from "next/navigation";
+
 
 const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const router = useRouter();
+  const values = router.query;
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -30,7 +35,7 @@ const FormSymptoms = () => {
 
   const ageOptions = Array.from({ length: 100 }, (_, index) => index + 1); // Generate age options from 1 to 100
 
-  const initialValues = {
+  const initialValues2 = {
     date: "",
     sex: "",
     age: "",
@@ -46,7 +51,7 @@ const FormSymptoms = () => {
       e.preventDefault();
     }
   };
-
+  // "w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center
   const validationSchema = Yup.object({
     date: Yup.date().required("Required"),
     sex: Yup.string().required("Required"),
@@ -70,8 +75,8 @@ const FormSymptoms = () => {
       then: Yup.string(),
     }),
   });
-
-  const handleSubmit = async (values, { resetForm }) => {
+  
+  const handleSubmit = async (values2, { resetForm }) => {
     setIsSubmitting(true);
     try {
       const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
@@ -79,14 +84,17 @@ const FormSymptoms = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(values2),
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      const combinedFormData = { values, values2 };
       setIsSubmitting(false);
       resetForm();
-      console.log(values);
+      // combinedFormData();
+      console.log(combinedFormData);
+      console.log(values2);
     } catch (error) {
       console.error("There was an error!", error);
     } finally {
@@ -97,7 +105,8 @@ const FormSymptoms = () => {
   return (
     <div className="mx-12 my-8">
       <Formik
-        initialValues={ initialValues }
+        // page1Values={page1Values}
+        initialValues={ initialValues2 }
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""

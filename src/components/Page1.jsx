@@ -20,108 +20,111 @@ import Nose from "../assets/symptoms/nose.png"
 import Rash from "../assets/symptoms/rash.png"
 import Conjunctivitis from "../assets/symptoms/conjunctivitis.png"
 import Other from "../assets/symptoms/other.png"
+import None from "../assets/symptoms/none.png"
 
 const symptomsData = [
   {
     name: "Cough",
     image: Cough,
+    id: "cough"
   },
   {
     name: "Fever",
     image: Fever,
+    id: "fever"
   },
   {
     name: "Trouble Breathing",
     image: Breathing,
+    id: "breathing"
   },
   {
     name: "Headache",
     image: Headache,
+    id: "headache"
   },
   {
     name: "Muscle Ache",
     image: Muscle,
+    id: "muscleAche"
   },
   {
-    name: "Lost of Smell",
+    name: "Loss of Smell",
     image: Nose,
+    id: "lossOfSmell"
   },
   {
     name: "Chills",
     image: Chills,
+    id: "chills"
   },
   {
     name: "Excessive Fatigue",
     image: Fatigue,
+    id: "excessiveFatigue"
   },
   {
     name: "Nausea/Vomiting",
     image: Nausea,
+    id: "nauseaVomiting"
   },
   {
     name: "Diarrhea",
     image: Diarrhea,
+    id: "diarrhea"
   },
   {
     name: "Abdominal Pain",
     image: Abdominal,
+    id: "abdominalPain"
   },
   {
     name: "Skin Rash",
     image: Rash,
+    id: "skinRash"
   },
   {
     name: "Conjunctivitis",
     image: Conjunctivitis,
+    id: "conjunctivitis"
   },
   {
     name: "Other",
     image: Other,
+    id: "other"
+  },
+  {
+    name: "None",
+    image: None,
+    id: "noSymptoms"
   },
 ]
 
 const Page1 = () => {
   const router = useRouter();
 
-  const initialFormValues = {
-    button1: false,
-    button2: false,
-    button3: false,
-    button4: false,
-    button5: false,
-    button6: false,
-    button7: false,
-    button8: false,
-    button9: false,
-    button10: false,
-    button11: false,
-    button12: false,
-    button13: false,
-  };
-
   const handleSubmit = (values) => {
-    // Map the boolean values to "yes" for backend
-    const dataToSend = Object.keys(values).reduce((acc, key) => {
-      acc[key] = values[key] ? 'yes' : 'no';
-      return acc;
-    }, {});
 
     // Storing the form values in session storage to persist the values across pages)
     sessionStorage.setItem('formValues', JSON.stringify(values));
 
     // Navigate to the next page
-    router.push('/page2');
+    router.push({
+      pathname: '/FormSymptoms',
+      query: values
+    });
   };
-
+  
   // const [clickedButton, setClickedButton] = useState(null);
-
+  
   const handleButtonClick = ( field, setFieldValue, values) => () => {
     // if (clickedButton === field) {
-    //   setClickedButton(null);
-    // } else {
-    //   setClickedButton(field); 
-    // }
-    setFieldValue(field, !values[field]);
+      //   setClickedButton(null);
+      // } else {
+        //   setClickedButton(field); 
+        // }
+        setFieldValue(field, !values[field]);
+    console.log(values)
   };
 
   // ${clickedButton === `${item.id}` ? 'bg-[#8eaadd]' : 'bg-white'
@@ -133,7 +136,7 @@ const Page1 = () => {
         <p className='font-semibold'>Page 1 of 2</p>
         <p className='font-medium'>What are your symptoms?</p>
       </div>
-        <Formik initialValues={initialFormValues} onSubmit={handleSubmit}>
+        <Formik initialValues={{}} onSubmit={handleSubmit}>
           {({ values, setFieldValue }) => (
             <Form>
               <div className='grid grid-cols-3 m-4 shadow-slate-900'>
@@ -147,7 +150,7 @@ const Page1 = () => {
                     <Image
                       className="w-24"
                       src={item.image}
-                      alt={item.name} icon
+                      alt={item.name}
                     />
                     <p className="text-sm z-10 absolute bottom-0 text-center w-24 bg-white-500 opacity-80"><span className="">{item.name}</span></p>
                   </div>

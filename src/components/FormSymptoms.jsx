@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 
 const FormSymptoms = () => {
@@ -15,8 +15,10 @@ const FormSymptoms = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const router = useRouter();
-  const values = router.query;
+  const formValuesString = localStorage.getItem('formValues');
+  const formValues = JSON.parse(formValuesString);
+  // const router = useRouter();
+  // const values = router.query;
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -78,23 +80,26 @@ const FormSymptoms = () => {
   
   const handleSubmit = async (values2, { resetForm }) => {
     setIsSubmitting(true);
+    const combinedFormData = { ...formValues, ...values2 };
     try {
       const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values2),
+        body: JSON.stringify(combinedFormData),
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const combinedFormData = { values, values2 };
       setIsSubmitting(false);
       resetForm();
+      // Clear local storage for formData
+      localStorage.removeItem('formValues');
+
       // combinedFormData();
       console.log(combinedFormData);
-      console.log(values2);
+      // console.log(values2);
     } catch (error) {
       console.error("There was an error!", error);
     } finally {

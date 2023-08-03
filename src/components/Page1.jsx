@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Formik, Field, Form } from 'formik';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 import Abdominal from "../assets/symptoms/abdominal.png"
 import Breathing from "../assets/symptoms/breathing.png"
@@ -104,32 +103,14 @@ const Page1 = () => {
   const router = useRouter();
 
   const handleSubmit = (values) => {
-
-    // Storing the form values in session storage to persist the values across pages)
-    sessionStorage.setItem('formValues', JSON.stringify(values));
-
-    // Navigate to the next page
-    router.push({
-      pathname: '/FormSymptoms',
-      query: values
-    });
+    localStorage.setItem('formValues', JSON.stringify(values));
   };
-  
-  // const [clickedButton, setClickedButton] = useState(null);
-  
+
   const handleButtonClick = ( field, setFieldValue, values) => () => {
-    // if (clickedButton === field) {
-      //   setClickedButton(null);
-      // } else {
-        //   setClickedButton(field); 
-        // }
-        setFieldValue(field, !values[field]);
+    setFieldValue(field, !values[field]);
     console.log(values)
   };
 
-  // ${clickedButton === `${item.id}` ? 'bg-[#8eaadd]' : 'bg-white'
-  // } hover:bg-[#8eaadd] transition-colors
-  // `} 
   return (
     <>
       <div className='flex flex-col items-center justify-center text-[#30528F]'>
@@ -171,41 +152,3 @@ const Page1 = () => {
 };
   
   export default Page1;
-  
-  
-
-
-
-
-// function PickSymptoms() {
-//   return (
-
-
-//     <div className='grid grid-cols-3 m-4 shadow-slate-900'>
-//         {symptomsData.map((item) => (
-//           <button key={item.id} className="w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center">
-//             <div className="grid justify-center items-center">
-//               <Image
-//                 className="w-24"
-//                 src={item.image}
-//                 alt={item.name} icon
-//               />
-//               <p className="text-sm z-10 absolute bottom-0 text-center w-24 bg-white-500 opacity-80"><span className="">{item.name}</span></p>
-//             </div>
-//           </button>
-//         ))}
-//     </div>
-
-
-
-//     <div className='flex items-center justify-center'>
-//       <Link href='/symptoms2'>
-//         <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
-//       </Link>
-//       <Link href='/symptoms2'>
-//         <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]">Continue</button>
-//       </Link>
-//     </div>
-//     </>
-//   )
-// }

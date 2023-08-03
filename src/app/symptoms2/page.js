@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import FormSymptoms from "@/components/FormSymptoms";
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 
-export default function Symptoms2() {
+export default function Step1() {
 
     return (
         <>

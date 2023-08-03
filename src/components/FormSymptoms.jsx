@@ -5,12 +5,18 @@ import * as Yup from "yup";
 import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
+import { useRouter } from "next/navigation";
 
-function FormSymptoms() {
+
+const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const router = useRouter();
+  const values = router.query;
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -29,7 +35,7 @@ function FormSymptoms() {
 
   const ageOptions = Array.from({ length: 100 }, (_, index) => index + 1); // Generate age options from 1 to 100
 
-  const initialValues = {
+  const initialValues2 = {
     date: "",
     sex: "",
     age: "",
@@ -45,7 +51,7 @@ function FormSymptoms() {
       e.preventDefault();
     }
   };
-
+  // "w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center
   const validationSchema = Yup.object({
     date: Yup.date().required("Required"),
     sex: Yup.string().required("Required"),
@@ -69,22 +75,43 @@ function FormSymptoms() {
       then: Yup.string(),
     }),
   });
-
-  const handleSubmit = (values) => {
-    // Perform any necessary actions with the form data here
-    console.log("Form submitted:", values);
-    setIsOpen(true);
+  
+  const handleSubmit = async (values2, { resetForm }) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values2),
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const combinedFormData = { values, values2 };
+      setIsSubmitting(false);
+      resetForm();
+      // combinedFormData();
+      console.log(combinedFormData);
+      console.log(values2);
+    } catch (error) {
+      console.error("There was an error!", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
+  
   return (
     <div className="mx-12 my-8">
       <Formik
-        initialValues={{ ...initialValues }}
+        // page1Values={page1Values}
+        initialValues={ initialValues2 }
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""
       >
-        {({ values }) => (
+        {({ isSubmitting }) => (
           <Form>
             <div className="mt-4">
               <label htmlFor="date" className={classNames(commonLabel, "")}>
@@ -204,8 +231,6 @@ function FormSymptoms() {
                 />
               </div>
             </div>
-
-            {/* will be working here */}
             <div>
               <p
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -216,8 +241,6 @@ function FormSymptoms() {
 
               {isDropdownOpen ? (
                 <div className="w-full rounded-lg  bg-inputfield text-zinc-400 font-semibold ">
-                  
-                  
                   <div>
                   <p onClick={() => setIsPhoneOpen(!isPhoneOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
                     Phone Number
@@ -229,18 +252,12 @@ function FormSymptoms() {
                         type="text"
                         id="phoneNumber"
                         name="phoneNumber"
-                        value={values.phoneNumber}
                         className={classNames(inputBox, "w-40 mb-4")}
                       />
                       <ErrorMessage name="phoneNumber" component="div" />
                     </div>
                   )}
                   </div>
-
-
-
-
-
 
                   <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
                     Date of Birth
@@ -252,7 +269,6 @@ function FormSymptoms() {
                         type="date"
                         id="dateOfBirth"
                         name="dateOfBirth"
-                        value={values.dateOfBirth}
                         className={classNames(inputBox, "w-40 mb-4")}
                       />
                       <ErrorMessage name="dateOfBirth" component="div" />
@@ -268,9 +284,10 @@ function FormSymptoms() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full mt-4"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </Form>
         )}
@@ -282,6 +299,6 @@ function FormSymptoms() {
       )}
     </div>
   );
-}
+};
 
 export default FormSymptoms;

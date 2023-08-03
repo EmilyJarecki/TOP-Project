@@ -8,6 +8,7 @@ function FormSymptoms() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
+  const [isMedicalHistoryOpen, setIsMedicalHistoryOpen] = useState(false);
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -34,6 +35,7 @@ function FormSymptoms() {
     race: "",
     phoneNumber: "",
     dateOfBirth: "",
+    medicalHistory: '',
   };
 
   const checkValue = (e) => {
@@ -65,6 +67,11 @@ function FormSymptoms() {
       // then: Yup.date().required('Date of Birth is required'),
       then: Yup.string(),
     }),
+    medicalHistory: Yup.string().when("isDropdownOpen", {
+      is: true,
+      // then: Yup.date().required('Date of Birth is required'),
+      then: Yup.string().max(500, 'Medical history must be at most 500 characters'),
+    })
   });
 
   const handleSubmit = (values) => {
@@ -212,52 +219,99 @@ function FormSymptoms() {
 
               {isDropdownOpen ? (
                 <div className="w-full rounded-lg  bg-inputfield text-zinc-400 font-semibold ">
-                  
-                  
                   <div>
-                  <p onClick={() => setIsPhoneOpen(!isPhoneOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
-                    Phone Number
-                  </p>
-                  {isPhoneOpen && (
-                    <div className="bg-[#E4EAEE] flex flex-col pl-4">
-                      <label htmlFor="phoneNumber" className="text-blue-900 font-normal pt-4">Phone Number:</label>
-                      <Field
-                        type="text"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        value={values.phoneNumber}
-                        className={classNames(inputBox, "w-40 mb-4")}
-                      />
-                      <ErrorMessage name="phoneNumber" component="div" />
-                    </div>
-                  )}
+                    <p
+                      onClick={() => setIsPhoneOpen(!isPhoneOpen)}
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
+                      Phone
+                    </p>
+                    {isPhoneOpen && (
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                        <label
+                          htmlFor="phoneNumber"
+                          className="text-blue-900 font-normal pt-4"
+                        >
+                          Phone Number:
+                        </label>
+                        <Field
+                          type="text"
+                          id="phoneNumber"
+                          name="phoneNumber"
+                          onKeyPress={(e) => checkValue(e)}
+                          value={values.phoneNumber}
+                          className={classNames(inputBox, "w-40 mb-4")}
+                        />
+                        <ErrorMessage name="phoneNumber" component="div" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <p
+                      onClick={() => setIsBirthDateOpen(!isBirthDateOpen)}
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
+                      Date of Birth
+                    </p>
+                    {isBirthDateOpen && (
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                        <label
+                          htmlFor="dateOfBirth"
+                          className="text-blue-900 font-normal pt-4"
+                        >
+                          Date of Birth:
+                        </label>
+                        <Field
+                          type="date"
+                          id="dateOfBirth"
+                          name="dateOfBirth"
+                          value={values.dateOfBirth}
+                          className={classNames(inputBox, "w-40 mb-4")}
+                        />
+                        <ErrorMessage name="dateOfBirth" component="div" />
+                      </div>
+                    )}
                   </div>
 
 
 
-
-
-
-                  <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
-                    Date of Birth
-                  </p>
-                  {isBirthDateOpen && (
-                    <div className="bg-[#E4EAEE] flex flex-col pl-4">
-                      <label htmlFor="dateOfBirth" className="text-blue-900 font-normal pt-4">Date of Birth:</label>
-                      <Field
-                        type="date"
-                        id="dateOfBirth"
-                        name="dateOfBirth"
-                        value={values.dateOfBirth}
-                        className={classNames(inputBox, "w-40 mb-4")}
-                      />
-                      <ErrorMessage name="dateOfBirth" component="div" />
-                    </div>
-                  )}
+                  <div>
+                    <p
+                      onClick={() => setIsMedicalHistoryOpen(!isMedicalHistoryOpen)}
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
+                      Medical History
+                    </p>
+                    {isMedicalHistoryOpen && (
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                        <label
+                          htmlFor="medicalHistory"
+                          className="text-blue-900 font-normal pt-4"
+                        >
+                          Medical History:
+                        </label>
+                        <Field
+                          as="textarea"
+                          id="medicalHistory"
+                          name="medicalHistory"
+                          rows="4"
+                          // cols="50"
+                          placeholder="Enter your medical history here..."
+                          value={values.medicalHistory}
+                          className={classNames(inputBox, "mb-4")}
+                        />
+                        <ErrorMessage name="dateOfBirth" component="div" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               ) : (
-                <p className={classNames(inputBox, "w-full mb-4")} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                   Click here
+                <p
+                  className={classNames(inputBox, "w-full mb-4")}
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                >
+                  Click here
                 </p>
               )}
             </div>

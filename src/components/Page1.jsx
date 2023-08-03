@@ -1,8 +1,10 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Formik, Field, Form } from 'formik';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import Abdominal from "../assets/symptoms/abdominal.png"
 import Breathing from "../assets/symptoms/breathing.png"
@@ -81,20 +83,6 @@ const symptomsData = [
 const Page1 = () => {
   const router = useRouter();
 
-  const handleSubmit = (values) => {
-    // Map the boolean values to "yes" for backend
-    const dataToSend = Object.keys(values).reduce((acc, key) => {
-      acc[key] = values[key] ? 'yes' : 'no';
-      return acc;
-    }, {});
-
-    // Storing the form values in session storage to persist the values across pages)
-    sessionStorage.setItem('formValues', JSON.stringify(values));
-
-    // Navigate to the next page
-    router.push('/page2');
-  };
-
   const initialFormValues = {
     button1: false,
     button2: false,
@@ -111,18 +99,83 @@ const Page1 = () => {
     button13: false,
   };
 
+  const handleSubmit = (values) => {
+    // Map the boolean values to "yes" for backend
+    const dataToSend = Object.keys(values).reduce((acc, key) => {
+      acc[key] = values[key] ? 'yes' : 'no';
+      return acc;
+    }, {});
 
+    // Storing the form values in session storage to persist the values across pages)
+    sessionStorage.setItem('formValues', JSON.stringify(values));
+
+    // Navigate to the next page
+    router.push('/page2');
+  };
+
+  // const [clickedButton, setClickedButton] = useState(null);
+
+  const handleButtonClick = ( field, setFieldValue, values) => () => {
+    // if (clickedButton === field) {
+    //   setClickedButton(null);
+    // } else {
+    //   setClickedButton(field); 
+    // }
+    setFieldValue(field, !values[field]);
+  };
+
+  // ${clickedButton === `${item.id}` ? 'bg-[#8eaadd]' : 'bg-white'
+  // } hover:bg-[#8eaadd] transition-colors
+  // `} 
+  return (
+    <>
+      <div className='flex flex-col items-center justify-center text-[#30528F]'>
+        <p className='font-semibold'>Page 1 of 2</p>
+        <p className='font-medium'>What are your symptoms?</p>
+      </div>
+        <Formik initialValues={initialFormValues} onSubmit={handleSubmit}>
+          {({ values, setFieldValue }) => (
+            <Form>
+              <div className='grid grid-cols-3 m-4 shadow-slate-900'>
+                {symptomsData.map((item) => (
+                  <button className={`w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center `}
+                    key={item.id} 
+                    type="button"
+                    onClick={handleButtonClick(`${item.id}`, setFieldValue, values)}
+                  >
+                  <div className="grid justify-center items-center">
+                    <Image
+                      className="w-24"
+                      src={item.image}
+                      alt={item.name} icon
+                    />
+                    <p className="text-sm z-10 absolute bottom-0 text-center w-24 bg-white-500 opacity-80"><span className="">{item.name}</span></p>
+                  </div>
+                  </button>
+                ))}
+              </div>
+              <Link href='/symptoms2'>
+                <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
+              </Link>
+              <Link href='/symptoms2'>
+                <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]" type="submit">Continue</button>
+              </Link>
+            </Form>
+          )}
+        </Formik>
+    </>
+  );
 };
+  
+  export default Page1;
+  
+  
+
 
 
 
 // function PickSymptoms() {
 //   return (
-//     <>
-//     <div className='flex flex-col items-center justify-center text-[#30528F]'>
-//       <p className='font-semibold'>Page 1 of 2</p>
-//       <p className='font-medium'>What are your symptoms?</p>
-//     </div>
 
 
 //     <div className='grid grid-cols-3 m-4 shadow-slate-900'>
@@ -153,5 +206,3 @@ const Page1 = () => {
 //     </>
 //   )
 // }
-
-export default Page1

@@ -10,8 +10,6 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        // "check": "url('/assets/popUpResults/check.jpg')",
-        // "covidImg1.png": "url('/assets/popUpResults/covidImg1.png')",
       },
       colors: {
         "hych-bg-blue": "#606E90",

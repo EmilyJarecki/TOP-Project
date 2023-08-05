@@ -3,12 +3,21 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
+import Modal from "react-modal";
+import PopUpResults from "./PopUpResults";
+import { useRouter } from "next/navigation";
 
-function FormSymptoms() {
+
+const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const [isBirthDateOpen, setIsBirthDateOpen] = useState(false);
   const [isMedicalHistoryOpen, setIsMedicalHistoryOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const router = useRouter();
+  const values = router.query;
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -27,7 +36,7 @@ function FormSymptoms() {
 
   const ageOptions = Array.from({ length: 100 }, (_, index) => index + 1); // Generate age options from 1 to 100
 
-  const initialValues = {
+  const initialValues2 = {
     date: "",
     sex: "",
     age: "",
@@ -44,7 +53,7 @@ function FormSymptoms() {
       e.preventDefault();
     }
   };
-
+  // "w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center
   const validationSchema = Yup.object({
     date: Yup.date().required("Required"),
     sex: Yup.string().required("Required"),
@@ -73,21 +82,43 @@ function FormSymptoms() {
       then: Yup.string().max(500, 'Medical history must be at most 500 characters'),
     })
   });
-
-  const handleSubmit = (values) => {
-    // Perform any necessary actions with the form data here
-    console.log("Form submitted:", values);
+  
+  const handleSubmit = async (values2, { resetForm }) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values2),
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const combinedFormData = { values, values2 };
+      setIsSubmitting(false);
+      resetForm();
+      // combinedFormData();
+      console.log(combinedFormData);
+      console.log(values2);
+    } catch (error) {
+      console.error("There was an error!", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
+  
   return (
     <div className="mx-12 my-8">
       <Formik
-        initialValues={{ ...initialValues }}
+        // page1Values={page1Values}
+        initialValues={ initialValues2 }
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""
       >
-        {({ values }) => (
+        {({ isSubmitting }) => (
           <Form>
             <div className="mt-4">
               <label htmlFor="date" className={classNames(commonLabel, "")}>
@@ -207,8 +238,6 @@ function FormSymptoms() {
                 />
               </div>
             </div>
-
-            {/* will be working here */}
             <div>
               <p
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -239,72 +268,28 @@ function FormSymptoms() {
                           id="phoneNumber"
                           name="phoneNumber"
                           onKeyPress={(e) => checkValue(e)}
-                          value={values.phoneNumber}
-                          className={classNames(inputBox, "w-40 mb-4")}
+                            className={classNames(inputBox, "w-40 mb-4")}
                         />
                         <ErrorMessage name="phoneNumber" component="div" />
                       </div>
                     )}
                   </div>
 
-                  <div>
-                    <p
-                      onClick={() => setIsBirthDateOpen(!isBirthDateOpen)}
-                      className="p-2 font-semibold border-b border-b-zinc-300"
-                    >
-                      Date of Birth
-                    </p>
-                    {isBirthDateOpen && (
-                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
-                        <label
-                          htmlFor="dateOfBirth"
-                          className="text-blue-900 font-normal pt-4"
-                        >
-                          Date of Birth:
-                        </label>
-                        <Field
-                          type="date"
-                          id="dateOfBirth"
-                          name="dateOfBirth"
-                          value={values.dateOfBirth}
-                          className={classNames(inputBox, "w-40 mb-4")}
-                        />
-                        <ErrorMessage name="dateOfBirth" component="div" />
-                      </div>
-                    )}
-                  </div>
-
-
-
-                  <div>
-                    <p
-                      onClick={() => setIsMedicalHistoryOpen(!isMedicalHistoryOpen)}
-                      className="p-2 font-semibold border-b border-b-zinc-300"
-                    >
-                      Medical History
-                    </p>
-                    {isMedicalHistoryOpen && (
-                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
-                        <label
-                          htmlFor="medicalHistory"
-                          className="text-blue-900 font-normal pt-4"
-                        >
-                          Medical History:
-                        </label>
-                        <Field
-                          as="textarea"
-                          id="medicalHistory"
-                          name="medicalHistory"
-                          rows="4"
-                          // cols="50"
-                          placeholder="Enter your medical history here..."
-                          value={values.medicalHistory}
-                          className={classNames(inputBox, "mb-4")}
-                        />
-                        <ErrorMessage name="dateOfBirth" component="div" />
-                      </div>
-                    )}
-                  </div>
+                  <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
+                    Date of Birth
+                  </p>
+                  {isBirthDateOpen && (
+                    <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                      <label htmlFor="dateOfBirth" className="text-blue-900 font-normal pt-4">Date of Birth:</label>
+                      <Field
+                        type="date"
+                        id="dateOfBirth"
+                        name="dateOfBirth"
+                        className={classNames(inputBox, "w-40 mb-4")}
+                      />
+                      <ErrorMessage name="dateOfBirth" component="div" />
+                    </div>
+                  )}
                 </div>
               ) : (
                 <p
@@ -318,15 +303,21 @@ function FormSymptoms() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full mt-4"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </Form>
         )}
       </Formik>
+      {isOpen && (
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} ariaHideApp={false}>
+        <PopUpResults />
+      </Modal>
+      )}
     </div>
   );
-}
+};
 
 export default FormSymptoms;

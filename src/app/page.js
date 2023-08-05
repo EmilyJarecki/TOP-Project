@@ -20,11 +20,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--inter-font' });
 
 export default function Home() {
 
-  const [width, setWidth] = useState(window.innerWidth)
+  // const [width, setWidth] = useState(window.innerWidth)
 
-  useEffect(() => {
-    window.addEventListener('resize', () => setWidth(window.innerWidth))
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener('resize', () => setWidth(window.innerWidth))
+  // }, [])
 
   return (
     <main className={`${rubik.variable} ${inter.variable}`}>
@@ -47,11 +47,14 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div>
-        <div>
-          <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
-          <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] mx-[50px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
-        </div>
+      <div className="flex">
+        {/* <div> */}
+          <div className="md:w-[530px]">
+            <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
+            <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] mx-[50px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
+          </div>
+          <Image src={family} alt="happy family" className="max-md:hidden w-[300px] h-[240px]"></Image>
+        {/* </div> */}
         
       </div>
       <HowYouCanHelp></HowYouCanHelp>

@@ -19,19 +19,19 @@ export default function Faq() {
         </center>
         <br />
         <center>
-            <p className="text-sm text-hych-subheading-blue">
+            <p className="text-sm text-hych-subheading-blue mx-[10%]">
             MakeMyTestCount is a part of an effort at the National Institutes of Health to develop standard ways to report at-home tests, and to securely and privately collect the information in a way that fits into existing data systems.
             </p>
         <br />
-            <p className="text-sm text-hych-subheading-blue">
+            <p className="text-sm text-hych-subheading-blue mx-[10%]">
             By reporting your test — whether negative or positive — you are part of that effort. When you report your test result, you help improve America’s understanding of how people are using at-home tests. 
             </p>
         <br />
-            <p className="text-sm text-hych-subheading-blue">
+            <p className="text-sm text-hych-subheading-blue mx-[10%]">
             You’re also helping researchers and public health teams figure out how best to use the data those test results give them.
             </p>
         <br />
-            <p className="text-sm text-hych-subheading-blue">
+            <p className="text-sm text-hych-subheading-blue mx-[10%]">
             At-home tests are likely to become even more popular in the future. When you report your results, you’re helping build the foundation of a system that is intended to help people across the country live safer, healthier lives. Thank you for doing your part - and for making your test count.
             </p>
         <br />

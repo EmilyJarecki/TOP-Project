@@ -274,7 +274,7 @@ const FormSymptoms = () => {
                       </div>
                     )}
                   </div>
-
+                  <div>
                   <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
                     Date of Birth
                   </p>
@@ -290,6 +290,26 @@ const FormSymptoms = () => {
                       <ErrorMessage name="dateOfBirth" component="div" />
                     </div>
                   )}
+                  </div>
+
+<div>
+<div>
+            <label htmlFor="medicalHistory">Medical History:</label>
+            <Field
+              as="textarea"
+              id="medicalHistory"
+              name="medicalHistory"
+              rows="4"
+              cols="50"
+              placeholder="Enter your medical history here..."
+            />
+            <ErrorMessage name="medicalHistory" component="div" className="error" />
+          </div>
+
+
+</div>
+
+
                 </div>
               ) : (
                 <p

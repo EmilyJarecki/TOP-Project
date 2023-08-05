@@ -43,25 +43,25 @@ export default function Faq() {
         <br />
         <left>
             <div className="grid grid-cols-1 divide-y">
-            <p className="text-l text-hych-title-blue">Who can see my results</p>
+            <p className="text-l text-hych-title-blue ml-2">Who can see my results</p>
             <br />
-            <p className="text-l text-hych-title-blue">Do I have to give my personal information to report test results</p>
+            <p className="text-l text-hych-title-blue ml-2">Do I have to give my personal information to report test results</p>
             <br />
-            <p className="text-l text-hych-title-blue">How does MakeMyTestCount protect my information</p>
+            <p className="text-l text-hych-title-blue ml-2">How does MakeMyTestCount protect my information</p>
             <br />
-            <p className="text-l text-hych-title-blue">Why should I bother reporting a negative test?</p>
+            <p className="text-l text-hych-title-blue ml-2">Why should I bother reporting a negative test?</p>
             <br />
-            <p className="text-l text-hych-title-blue">What kinds of tests can I report on this site?</p>
+            <p className="text-l text-hych-title-blue ml-2">What kinds of tests can I report on this site?</p>
             <br />
-            <p className="text-l text-hych-title-blue">Is this website the only way that at-home tests get reported?</p>
+            <p className="text-l text-hych-title-blue ml-2">Is this website the only way that at-home tests get reported?</p>
             <br />
-            <p className="text-l text-hych-title-blue">Where does the post-testing guidance on MakeMyTestCount.org come from?</p>
+            <p className="text-l text-hych-title-blue ml-2">Where does the post-testing guidance on MakeMyTestCount.org come from?</p>
             <br />
-            <p className="text-l text-hych-title-blue">Who is CareEvolution?</p>
+            <p className="text-l text-hych-title-blue ml-2">Who is CareEvolution?</p>
             <br />
-            <p className="text-l text-hych-title-blue">Are there other ways I can help besides reporting my test results?</p>
+            <p className="text-l text-hych-title-blue ml-2">Are there other ways I can help besides reporting my test results?</p>
             <br />
-            <p className="text-l text-hych-title-blue">What if I have a question that wasn’t answered here?</p>
+            <p className="text-l text-hych-title-blue ml-2">What if I have a question that wasn’t answered here?</p>
             </div>
         </left>
         <Footer />

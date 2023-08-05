@@ -7,7 +7,6 @@ import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
 import { useRouter } from "next/navigation";
 
-
 const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
@@ -15,6 +14,7 @@ const FormSymptoms = () => {
   const [isMedicalHistoryOpen, setIsMedicalHistoryOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAddressOpen, setAddressOpen] = useState(false);
 
   const router = useRouter();
   const values = router.query;
@@ -44,7 +44,10 @@ const FormSymptoms = () => {
     race: "",
     phoneNumber: "",
     dateOfBirth: "",
-    medicalHistory: '',
+    medicalHistory: "",
+    optStAddress: "",
+    optZipcode: "",
+    optState: "",
   };
 
   const checkValue = (e) => {
@@ -73,26 +76,42 @@ const FormSymptoms = () => {
     }),
     dateOfBirth: Yup.string().when("isDropdownOpen", {
       is: true,
-      // then: Yup.date().required('Date of Birth is required'),
       then: Yup.string(),
     }),
     medicalHistory: Yup.string().when("isDropdownOpen", {
       is: true,
-      // then: Yup.date().required('Date of Birth is required'),
-      then: Yup.string().max(500, 'Medical history must be at most 500 characters'),
-    })
+      then: Yup.string().max(
+        500,
+        "Medical history must be at most 500 characters"
+      ),
+    }),
+    optStAddress: Yup.string().when("isDropdownOpen", {
+      is: true,
+      then: Yup.string(),
+    }),
+    optZipcode: Yup.string().when("isDropdownOpen", {
+      is: true,
+      then: Yup.string(),
+    }),
+    optState: Yup.string().when("isDropdownOpen", {
+      is: true,
+      then: Yup.string(),
+    }),
   });
-  
+
   const handleSubmit = async (values2, { resetForm }) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values2),
-      });
+      const response = await fetch(
+        "https://top-backend-739f5c08dc02.herokuapp.com/symptoms",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values2),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -108,12 +127,12 @@ const FormSymptoms = () => {
       setIsSubmitting(false);
     }
   };
-  
+
   return (
     <div className="mx-12 my-8">
       <Formik
         // page1Values={page1Values}
-        initialValues={ initialValues2 }
+        initialValues={initialValues2}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
         className=""
@@ -268,48 +287,112 @@ const FormSymptoms = () => {
                           id="phoneNumber"
                           name="phoneNumber"
                           onKeyPress={(e) => checkValue(e)}
-                            className={classNames(inputBox, "w-40 mb-4")}
+                          className={classNames(inputBox, "w-40 mb-4")}
                         />
                         <ErrorMessage name="phoneNumber" component="div" />
                       </div>
                     )}
                   </div>
+
                   <div>
-                  <p onClick={() => setIsBirthDateOpen(!isBirthDateOpen)} className="p-2 font-semibold border-b border-b-zinc-300">
-                    Date of Birth
-                  </p>
-                  {isBirthDateOpen && (
-                    <div className="bg-[#E4EAEE] flex flex-col pl-4">
-                      <label htmlFor="dateOfBirth" className="text-blue-900 font-normal pt-4">Date of Birth:</label>
-                      <Field
-                        type="date"
-                        id="dateOfBirth"
-                        name="dateOfBirth"
-                        className={classNames(inputBox, "w-40 mb-4")}
-                      />
-                      <ErrorMessage name="dateOfBirth" component="div" />
-                    </div>
-                  )}
+                    <p
+                      onClick={() => setIsBirthDateOpen(!isBirthDateOpen)}
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
+                      Date of Birth
+                    </p>
+                    {isBirthDateOpen && (
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                        <label
+                          htmlFor="dateOfBirth"
+                          className="text-blue-900 font-normal pt-4"
+                        >
+                          Date of Birth:
+                        </label>
+                        <Field
+                          type="date"
+                          id="dateOfBirth"
+                          name="dateOfBirth"
+                          className={classNames(inputBox, "w-40 mb-4")}
+                        />
+                        <ErrorMessage name="dateOfBirth" component="div" />
+                      </div>
+                    )}
                   </div>
 
-<div>
-<div>
-            <label htmlFor="medicalHistory">Medical History:</label>
-            <Field
-              as="textarea"
-              id="medicalHistory"
-              name="medicalHistory"
-              rows="4"
-              cols="50"
-              placeholder="Enter your medical history here..."
-            />
-            <ErrorMessage name="medicalHistory" component="div" className="error" />
-          </div>
-
-
-</div>
-
-
+                  <div>
+                    <p
+                      onClick={() =>
+                        setIsMedicalHistoryOpen(!isMedicalHistoryOpen)
+                      }
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
+                      Medical History
+                    </p>
+                    {isMedicalHistoryOpen && (
+                      <div>
+                        <label
+                          htmlFor="medicalHistory"
+                          className="text-blue-900 font-normal pt-4"
+                        >
+                          Medical History:
+                        </label>
+                        <Field
+                          as="textarea"
+                          id="medicalHistory"
+                          name="medicalHistory"
+                          rows="4"
+                          cols="50"
+                          placeholder="Enter your medical history here..."
+                        />
+                        <ErrorMessage
+                          name="medicalHistory"
+                          component="div"
+                          className="error"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <p onClick={() => setAddressOpen(!isAddressOpen)}>
+                      Address
+                    </p>
+                    {isAddressOpen && (
+                      <>
+                        <div>
+                          <label htmlFor="optStreetAddress">Street Address:</label>
+                          <Field
+                            type="text"
+                            id="optStreetAddress"
+                            name="optStreetAddress"
+                          />
+                          <ErrorMessage
+                            name="optStreetAddress"
+                            component="div"
+                            className="error"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="optZipcode">Zipcode:</label>
+                          <Field type="text" id="optZipcode" name="optZipcode" />
+                          <ErrorMessage
+                            name="optZipcode"
+                            component="div"
+                            className="error"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="optState">State:</label>
+                          <Field type="text" id="optState" name="optState" />
+                          <ErrorMessage
+                            name="optState"
+                            component="div"
+                            className="error"
+                          />
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <p
@@ -326,15 +409,19 @@ const FormSymptoms = () => {
               disabled={isSubmitting}
               className="shadow-lg rounded-md py-1 text-sm text-bold text-white bg-[#30528F] w-full mt-4"
             >
-              {isSubmitting ? 'Submitting...' : 'Submit'}
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </Form>
         )}
       </Formik>
       {isOpen && (
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} ariaHideApp={false}>
-        <PopUpResults />
-      </Modal>
+        <Modal
+          isOpen={isOpen}
+          onRequestClose={() => setIsOpen(false)}
+          ariaHideApp={false}
+        >
+          <PopUpResults />
+        </Modal>
       )}
     </div>
   );

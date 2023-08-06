@@ -32,7 +32,7 @@ export default function Home() {
           <button className='shadow-md rounded-xl px-20 my-3'>Negative</button>
         </Link>
         <Link href="/takePhoto">
-          <button className='shadow-md rounded-xl px-20 my-3'>Take a Photo to be Sure!</button>
+          <button className='shadow-md rounded-xl px-20 my-3'>Take a Photo to Check!</button>
         </Link>
       </div>
       <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>

@@ -24,12 +24,71 @@ const FormSymptoms = () => {
   const inputBox = "rounded-lg p-2 bg-inputfield text-zinc-400 font-semibold";
 
   const raceOptions = [
-    "Hispanic or Latino",
     "American Indian or Alaska Native",
     "Asian",
     "Black or African American",
     "Native Hawaiian or Other Pacific Islander",
-    "White",
+    "Two or more races (Not Hispanic or Latino",
+    "White"
+  ];
+
+  const ethnicityOptions = [
+    "Hispanic or Latino",
+    "Not Hispanic or Latino"
+  ]
+
+  const statesList = [
+    { value: "", label: "Select" },
+    { value: "AL", label: "Alabama" },
+    { value: "AK", label: "Alaska" },
+    { value: "AZ", label: "Arizona" },
+    { value: "AR", label: "Arkansas" },
+    { value: "CA", label: "California" },
+    { value: "CO", label: "Colorado" },
+    { value: "CT", label: "Connecticut" },
+    { value: "DE", label: "Delaware" },
+    { value: "FL", label: "Florida" },
+    { value: "GA", label: "Georgia" },
+    { value: "HI", label: "Hawaii" },
+    { value: "ID", label: "Idaho" },
+    { value: "IL", label: "Illinois" },
+    { value: "IN", label: "Indiana" },
+    { value: "IA", label: "Iowa" },
+    { value: "KS", label: "Kansas" },
+    { value: "KY", label: "Kentucky" },
+    { value: "LA", label: "Louisiana" },
+    { value: "ME", label: "Maine" },
+    { value: "MD", label: "Maryland" },
+    { value: "MA", label: "Massachusetts" },
+    { value: "MI", label: "Michigan" },
+    { value: "MN", label: "Minnesota" },
+    { value: "MS", label: "Mississippi" },
+    { value: "MO", label: "Missouri" },
+    { value: "MT", label: "Montana" },
+    { value: "NE", label: "Nebraska" },
+    { value: "NV", label: "Nevada" },
+    { value: "NH", label: "New Hampshire" },
+    { value: "NJ", label: "New Jersey" },
+    { value: "NM", label: "New Mexico" },
+    { value: "NY", label: "New York" },
+    { value: "NC", label: "North Carolina" },
+    { value: "ND", label: "North Dakota" },
+    { value: "OH", label: "Ohio" },
+    { value: "OK", label: "Oklahoma" },
+    { value: "OR", label: "Oregon" },
+    { value: "PA", label: "Pennsylvania" },
+    { value: "RI", label: "Rhode Island" },
+    { value: "SC", label: "South Carolina" },
+    { value: "SD", label: "South Dakota" },
+    { value: "TN", label: "Tennessee" },
+    { value: "TX", label: "Texas" },
+    { value: "UT", label: "Utah" },
+    { value: "VT", label: "Vermont" },
+    { value: "VA", label: "Virginia" },
+    { value: "WA", label: "Washington" },
+    { value: "WV", label: "West Virginia" },
+    { value: "WI", label: "Wisconsin" },
+    { value: "WY", label: "Wyoming" },
   ];
 
   const sexOptions = ["Male", "Female"];
@@ -41,6 +100,7 @@ const FormSymptoms = () => {
     sex: "",
     age: "",
     zipCode: "",
+    ethnicity: "",
     race: "",
     phoneNumber: "",
     dateOfBirth: "",
@@ -68,8 +128,12 @@ const FormSymptoms = () => {
       .matches(/^\d{5}$/, "Zip Code must be exactly 5 digits")
       .required("Required")
       .min(5, "Zip must be 5 digits"),
-    race: Yup.string().required("Required"),
-    phoneNumber: Yup.string().when("isDropdownOpen", {
+    ethnicity: Yup.string().required("Required"),
+    race: Yup.string(),
+    phoneNumber: Yup.string()
+    .min(10, "Phone must be 10 digits")
+    .max(10, "Phone must be 10 digits")
+    .when("isDropdownOpen", {
       is: true,
       // then: Yup.string().required('Phone Number is required'),
       then: Yup.string(),
@@ -89,10 +153,13 @@ const FormSymptoms = () => {
       is: true,
       then: Yup.string(),
     }),
-    optZipcode: Yup.string().when("isDropdownOpen", {
-      is: true,
-      then: Yup.string(),
-    }),
+    optZipcode: Yup.string()
+      .matches(/^\d{5}$/, "Zip Code must be exactly 5 digits")
+      .min(5, "Zip must be 5 digits")
+      .when("isDropdownOpen", {
+        is: true,
+        then: Yup.string(),
+      }),
     optState: Yup.string().when("isDropdownOpen", {
       is: true,
       then: Yup.string(),
@@ -207,8 +274,34 @@ const FormSymptoms = () => {
                 />
               </div>
             </div>
-            <div className="flex justify-between mt-4">
-              <div className="">
+
+
+              <div className="mt-4">
+                <label htmlFor="ethnicity" className={classNames(commonLabel, "")}>
+                  Ethnicity:
+                </label>
+                <Field
+                  as="select"
+                  id="ethnicity"
+                  name="ethnicity"
+                  className={classNames(inputBox, "w-full")}
+                >
+                  <option value="" className="w-full">
+                    Select
+                  </option>
+                  {ethnicityOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Field>
+                <ErrorMessage
+                  name="ethnicity"
+                  component="div"
+                  className={classNames(errorMessage, "")}
+                />
+              </div>
+              <div className="mt-4">
                 <label htmlFor="race" className={classNames(commonLabel, "")}>
                   Race:
                 </label>
@@ -216,9 +309,9 @@ const FormSymptoms = () => {
                   as="select"
                   id="race"
                   name="race"
-                  className={classNames(inputBox, "w-40")}
+                  className={classNames(inputBox, "w-full")}
                 >
-                  <option value="" className="w-40">
+                  <option value="" className="w-full">
                     Select
                   </option>
                   {raceOptions.map((option) => (
@@ -234,7 +327,7 @@ const FormSymptoms = () => {
                 />
               </div>
 
-              <div>
+              <div className="mt-4">
                 <label
                   htmlFor="zipCode"
                   className={classNames(commonLabel, "")}
@@ -256,7 +349,7 @@ const FormSymptoms = () => {
                   className={classNames(errorMessage, "")}
                 />
               </div>
-            </div>
+
             <div>
               <p
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -264,6 +357,7 @@ const FormSymptoms = () => {
               >
                 Additional Information
               </p>
+              <p className="font-semibold text-[#7195D3] text-sm mb-2">Enter more info to enter yourself into our lottery!</p>
 
               {isDropdownOpen ? (
                 <div className="w-full rounded-lg  bg-inputfield text-zinc-400 font-semibold ">
@@ -330,10 +424,10 @@ const FormSymptoms = () => {
                       Medical History
                     </p>
                     {isMedicalHistoryOpen && (
-                      <div>
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
                         <label
                           htmlFor="medicalHistory"
-                          className="text-blue-900 font-normal pt-4"
+                          className="text-blue-900 font-normal mt-4"
                         >
                           Medical History:
                         </label>
@@ -342,8 +436,9 @@ const FormSymptoms = () => {
                           id="medicalHistory"
                           name="medicalHistory"
                           rows="4"
-                          cols="50"
+                          // cols="30"
                           placeholder="Enter your medical history here..."
+                          className={classNames(inputBox, "w-full mb-4")}
                         />
                         <ErrorMessage
                           name="medicalHistory"
@@ -354,17 +449,26 @@ const FormSymptoms = () => {
                     )}
                   </div>
                   <div>
-                    <p onClick={() => setAddressOpen(!isAddressOpen)}>
+                    <p
+                      onClick={() => setAddressOpen(!isAddressOpen)}
+                      className="p-2 font-semibold border-b border-b-zinc-300"
+                    >
                       Address
                     </p>
                     {isAddressOpen && (
-                      <>
-                        <div>
-                          <label htmlFor="optStreetAddress">Street Address:</label>
+                      <div className="bg-[#E4EAEE] flex flex-col pl-4">
+                        <div className="mt-4">
+                          <label
+                            htmlFor="optStreetAddress"
+                            className="text-blue-900 font-normal mt-4"
+                          >
+                            Street Address:
+                          </label>
                           <Field
                             type="text"
                             id="optStreetAddress"
                             name="optStreetAddress"
+                            className={classNames(inputBox, "w-full mb-4")}
                           />
                           <ErrorMessage
                             name="optStreetAddress"
@@ -372,25 +476,57 @@ const FormSymptoms = () => {
                             className="error"
                           />
                         </div>
-                        <div>
-                          <label htmlFor="optZipcode">Zipcode:</label>
-                          <Field type="text" id="optZipcode" name="optZipcode" />
-                          <ErrorMessage
-                            name="optZipcode"
-                            component="div"
-                            className="error"
-                          />
+                        <div className="flex justify-between">
+                          <div className="flex flex-col">
+                            <label
+                              htmlFor="optZipcode"
+                              className="text-blue-900 font-normal"
+                            >
+                              Zipcode:
+                            </label>
+                            <Field
+                              type="text"
+                              id="optZipcode"
+                              name="optZipcode"
+                              className={classNames(inputBox, "w-20 mb-4")}
+                              placeholder="12345"
+                              maxLength={5}
+                              onKeyPress={(e) => checkValue(e)}
+                            />
+                            <ErrorMessage
+                              name="optZipcode"
+                              component="div"
+                              className="error"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <label
+                              htmlFor="optState"
+                              className="text-blue-900 font-normal"
+                            >
+                              State:
+                            </label>
+                            <Field
+                              as="select"
+                              id="optState"
+                              name="optState"
+                              className={classNames(inputBox, "mb-4")}
+                            >
+                              {statesList.map((state) => (
+                                <option key={state.value} value={state.value}>
+                                  {state.value}
+                                </option>
+                              ))}
+                            </Field>
+
+                            <ErrorMessage
+                              name="optState"
+                              component="div"
+                              className="error"
+                            />
+                          </div>
                         </div>
-                        <div>
-                          <label htmlFor="optState">State:</label>
-                          <Field type="text" id="optState" name="optState" />
-                          <ErrorMessage
-                            name="optState"
-                            component="div"
-                            className="error"
-                          />
-                        </div>
-                      </>
+                      </div>
                     )}
                   </div>
                 </div>

@@ -39,9 +39,7 @@ export const TakePhoto = () => {
           <img className="mt-4" src={capturedImage} alt="Captured" />
         )}
       </div>
-        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">
-          Complete
-          </button>
+        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">Complete</button>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Link from 'next/link';
@@ -6,16 +8,27 @@ import { Inter, Rubik } from 'next/font/google';
 // import Landing from '@/components/Landing'
 import map from "../assets/map.png"
 import HowYouCanHelp from '@/components/HowYouCanHelp';
+import Modal from 'react-modal';
 
 
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
+import TakePhoto from '@/components/TakePhoto';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--rubik-font' });
 
 const inter = Inter({ subsets: ['latin'], variable: '--inter-font' });
 
-export default function Home() {
 
+export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsOpen(false);
+  };
   return (
     <main className={`${rubik.variable} ${inter.variable}`}>
       <Header />
@@ -30,11 +43,13 @@ export default function Home() {
         </Link>
         <Link href='/symptoms2'>
           <button className='shadow-md rounded-xl px-20 my-3'>Negative</button>
-        </Link>
-        <Link href="/takePhoto">
-          <button className='shadow-md rounded-xl px-20 my-3'>Take a Photo to Check!</button>
-        </Link>
+        </Link>      
+          <button className='shadow-md rounded-xl px-20 my-3' onClick={handleModalOpen}>Take a Photo to Check!</button>
       </div>
+      <Modal isOpen={isOpen} onRequestClose={handleModalClose}>
+        <TakePhoto />
+      </Modal>
+
       <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
       <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] mx-[50px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
       <HowYouCanHelp></HowYouCanHelp>

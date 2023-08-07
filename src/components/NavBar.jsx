@@ -30,6 +30,8 @@ export const NavBar = () => {
                   <li className='py-5'><Link href="/faq">FAQs</Link></li>
                   <li className='py-5'><Link href="/about">About Us</Link></li>
                   <li className='py-5'><Link href="/resources">Resources</Link></li>
+                  <li className='py-5'><Link href="/team">Our Team</Link></li>
+
                 </ul>
               </div>
             </div>

@@ -95,10 +95,10 @@ const FormSymptoms = () => {
       setIsSubmitting(false);
       resetForm();
       // Clear local storage for formData
-      localStorage.removeItem('formValues');
-
+      
       // combinedFormData();
       console.log(combinedFormData);
+      localStorage.removeItem('formValues');
       // console.log(values2);
     } catch (error) {
       console.error("There was an error!", error);

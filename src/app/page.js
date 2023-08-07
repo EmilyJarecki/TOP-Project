@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Inter, Rubik } from 'next/font/google';
-// import Landing from '@/components/Landing'
 import map from "../assets/map.png"
 import family from "../assets/family.png"
 import HowYouCanHelp from '@/components/HowYouCanHelp';
@@ -27,10 +26,9 @@ export default function Home() {
   // }, [])
 
   return (
-    <main className={`${rubik.variable} ${inter.variable}`}>
+    <main className={`${rubik.variable} ${inter.variable} `}>
       <Header />
-      {/* <Landing /> */}
-      <div className="md:flex md:flex-row-reverse items-center justify-center">
+      <div className="flex flex-row-reverse md:flex-col items-center justify-center ">
         <div className="flex flex-col items-center justify-center ">
           <p className="bg-[#5B83CB] text-[#FAFBFF] text-[11.25px] mt-[42px] mb-[24px] py-[4px] px-[12px] rounded-full">12,345 positive tests today</p>
           <Image src={map} alt='map of the united states'></Image>
@@ -53,7 +51,7 @@ export default function Home() {
             <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
             <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] mx-[50px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
           </div>
-          <Image src={family} alt="happy family" className="max-md:hidden w-[280px] h-[220px]"></Image>
+          <Image src={family} alt="happy family" className="md:hidden lg:visible w-[280px] h-[220px]"></Image>
         {/* </div> */}
         
       </div>

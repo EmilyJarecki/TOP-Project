@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function HowYouCanHelp() {
 
     return (
-        <div className="bg-hych-bg-blue mx-4 rounded-md py-8 px-10 md:mx-[15%] lg:w-[800px]">
+        <div className="bg-hych-bg-blue mx-4 rounded-md py-8 px-10 sm:mx-[5%] md:mx-[15%] ">
             <div className="bg-white rounded-md flex flex-col items-center p-3">
                 <p className="font-rubik font-bold text-xl text-hych-title-blue leading-none tracking-tight">How You Can Help</p>
                 <div className="container px-5 flex-col">

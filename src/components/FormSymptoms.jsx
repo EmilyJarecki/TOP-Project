@@ -1,11 +1,12 @@
 "use client";
+import mongoose from 'mongoose';
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
 import Modal from "react-modal";
 import PopUpResults from "./PopUpResults";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const FormSymptoms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,10 +17,8 @@ const FormSymptoms = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAddressOpen, setAddressOpen] = useState(false);
 
-  const formValuesString = localStorage.getItem('formValues');
-  const formValues = JSON.parse(formValuesString);
-  // const router = useRouter();
-  // const values = router.query;
+  // const formValuesString = localStorage.getItem('formValues');
+  // const formValues = JSON.parse(formValuesString);
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -170,26 +169,25 @@ const FormSymptoms = () => {
 
   const handleSubmit = async (values2, { resetForm }) => {
     setIsSubmitting(true);
-    const combinedFormData = { ...formValues, ...values2 };
+    // const combinedFormData = { ...formValues, ...values2 };
     try {
-      const response = await fetch("https://top-backend-739f5c08dc02.herokuapp.com/symptoms", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values2),
-      });
+      const response = await fetch(
+        "https://top-backend-739f5c08dc02.herokuapp.com/symptoms",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values2),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       setIsSubmitting(false);
       resetForm();
-      // Clear local storage for formData
-      
-      // combinedFormData();
-      console.log(combinedFormData);
-      localStorage.removeItem('formValues');
-      // console.log(values2);
+      // localStorage.removeItem('formValues');
+      console.log(values2);
     } catch (error) {
       console.error("There was an error!", error);
     } finally {

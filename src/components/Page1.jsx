@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Formik, Field, Form } from 'formik';
@@ -101,13 +101,21 @@ const symptomsData = [
 
 const Page1 = () => {
   const router = useRouter();
+  const [clickedButtons, setClickedButtons] = useState([]);
 
-  const handleSubmit = (values) => {
-    localStorage.setItem('formValues', JSON.stringify(values));
-  };
+  // const handleSubmit = (values) => {
+  //   localStorage.setItem('formValues', JSON.stringify(values));
+  // };
 
   const handleButtonClick = ( field, setFieldValue, values) => () => {
     setFieldValue(field, !values[field]);
+    setClickedButtons(prevClickedButtons => {
+      if (prevClickedButtons.includes(field)) {
+        return prevClickedButtons.filter(button => button !== field);
+      } else {
+        return [...prevClickedButtons, field];
+      }
+    });
     console.log(values)
   };
 
@@ -117,15 +125,17 @@ const Page1 = () => {
         <p className='font-semibold'>Page 1 of 2</p>
         <p className='font-medium'>What are your symptoms?</p>
       </div>
-        <Formik initialValues={{}} onSubmit={handleSubmit}>
+        <Formik initialValues={{}}>
           {({ values, setFieldValue }) => (
             <Form>
               <div className='grid grid-cols-3 m-4 shadow-slate-900'>
                 {symptomsData.map((item) => (
-                  <button className={`w-24 bg-white m-1 h-24 hover:bg-[#8eaadd] relative rounded-lg flex justify-center `}
+                  <button className={`w-24 m-1 h-24 relative rounded-lg flex justify-center ${
+                    clickedButtons.includes(item.id) ? 'bg-[#8eaadd]' : 'bg-white hover:bg-[#8eaadd]'
+                  }`}
                     key={item.id} 
                     type="button"
-                    onClick={handleButtonClick(`${item.id}`, setFieldValue, values)}
+                    onClick={handleButtonClick(item.id, setFieldValue, values)}
                   >
                   <div className="grid justify-center items-center">
                     <Image
@@ -138,12 +148,14 @@ const Page1 = () => {
                   </button>
                 ))}
               </div>
-              <Link href='/symptoms2'>
-                <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
-              </Link>
-              <Link href='/symptoms2'>
-                <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]" type="submit">Continue</button>
-              </Link>
+              <div className='flex items-center justify-center'>
+                <Link href='/symptoms2'>
+                  <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
+                </Link>
+                <Link href='/symptoms2'>
+                  <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]" type="submit">Continue</button>
+                </Link>
+              </div>
             </Form>
           )}
         </Formik>

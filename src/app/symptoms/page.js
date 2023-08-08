@@ -10,10 +10,8 @@ export default function Symptoms() {
             <div className="bg-[#E4EAEE]">
                 <Header />
                 <Page1 />
-                {/* <FormSymptoms />
-                <PopUpResults />
-                <a className="underline text-blue-500" href="/">Go BACK</a>
-                <Footer/> */}
+                <AdditionalResourcesCarousel />
+                <Footer/>
             </div>
             
         </>

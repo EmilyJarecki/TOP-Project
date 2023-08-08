@@ -185,6 +185,7 @@ const FormSymptoms = () => {
         throw new Error("Network response was not ok");
       }
       setIsSubmitting(false);
+      setIsOpen(true);
       resetForm();
       // localStorage.removeItem('formValues');
       console.log(values2);

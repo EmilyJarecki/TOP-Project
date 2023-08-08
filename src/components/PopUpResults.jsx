@@ -24,6 +24,7 @@ function PopUpResults() {
             </div>
             <br />
               <div>
+              <span className="font-bold underline text-blue-500"><Link href="/">Report Another Test</Link></span>
                 <p className="text-1xl font-medium flex place-content-center">What Should I Do If I Tested Positive For Covid-19</p>
                 <p>You&apos;re part of the future of testing.</p>
                 <p>Improve America&apos;s understanding of at-home test use.</p>
@@ -46,6 +47,11 @@ function PopUpResults() {
                 <p>Learn more at <span className="underline text-blue-500"><Link href="https://whentotest.org/" target="_blank">WhenToTest.org</Link></span></p>
               </div>
               <br />
+              <div className='flex items-center justify-center'>
+                <Link href='/'>
+                  <button className="rounded-xl px-12 mb-3 text-white bg-[#30528F]">Close</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

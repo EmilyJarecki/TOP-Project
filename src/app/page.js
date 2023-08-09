@@ -45,15 +45,10 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="flex">
-        {/* <div> */}
-          <div className="md:w-[530px]">
-            <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
-            <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] mx-[50px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
-          </div>
-          <Image src={family} alt="happy family" className="md:hidden lg:visible w-[280px] h-[220px]"></Image>
-        {/* </div> */}
-        
+      <div className="flex flex-col justify-center items-center">
+
+        <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
+        <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] w-[300px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
       </div>
       <HowYouCanHelp></HowYouCanHelp>
       <AdditionalResourcesCarousel></AdditionalResourcesCarousel>

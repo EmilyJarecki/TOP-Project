@@ -48,9 +48,9 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center">
 
         <p className="text-center text-[#243C6C] text-[20px] font-bold font-inter mt-[52px]">Why Your Test Results Matter</p>
-        <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] w-[300px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
+        <p className="text-[#385FA4] text-[11.5px] font-bold p-[9px] w-[350px] mt-[20px] mb-[75px] rounded-[11px] shadow-md">Your reports provide valuable information about patterns and trends related to COVID-19 symptoms, disease severity, and treatment outcomes. These insights enable us to refine our understanding of the virus, identify new variants, and adapt our strategies accordingly</p>
+        <HowYouCanHelp></HowYouCanHelp>
       </div>
-      <HowYouCanHelp></HowYouCanHelp>
       <AdditionalResourcesCarousel></AdditionalResourcesCarousel>
       <p className="text-center font-bold text-[#385FA4] text-[30px] mt-20">Together, We Can Make A Difference</p>
       <Footer />

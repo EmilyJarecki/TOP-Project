@@ -29,7 +29,7 @@ export default function AdditionalResourcesCarousel() {
 
     return (
 
-        <div className="mx-auto max-w-sm px-3.5 mt-[25px]">
+        <div className="mx-auto  px-3.5 mt-[25px]">
             <div className="flex justify-center gap-1.5">
                 <div className={`${carouselIndex == 0 || carouselIndex == 3 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
                 <div className={`${carouselIndex == 1 || carouselIndex == 4 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>

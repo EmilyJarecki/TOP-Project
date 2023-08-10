@@ -38,10 +38,10 @@ The Challenge:
 #### UI/UX 
 
 #### Data Science Lead
-![linkedin logo](/src/assets/linkedin.png) [Dan Rossetti](https://www.linkedin.com/in/dan-rossetti/)<br/>
+![linkedin logo](/src/assets/linkedin.png) [Bekzod Tolipov](https://www.linkedin.com/in/bekzod-tolipov/)<br/>
 
 #### Data Science
-![linkedin logo](/src/assets/linkedin.png) [Bekzod Tolipov](https://www.linkedin.com/in/bekzod-tolipov/)<br/>
+![linkedin logo](/src/assets/linkedin.png) [Dan Rossetti](https://www.linkedin.com/in/dan-rossetti/)<br/>
 ![linkedin logo](/src/assets/linkedin.png) [Ricky Everest](https://www.linkedin.com/in/ricky-everest/)<br/>
 
 ### 🗜️ Technologies Used

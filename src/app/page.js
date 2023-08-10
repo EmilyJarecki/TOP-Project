@@ -9,8 +9,6 @@ import { Inter, Rubik } from 'next/font/google';
 import map from "../assets/map.png"
 import HowYouCanHelp from '@/components/HowYouCanHelp';
 import Modal from 'react-modal';
-
-
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 import TakePhoto from '@/components/TakePhoto';
 

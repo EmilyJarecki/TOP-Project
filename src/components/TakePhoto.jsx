@@ -6,7 +6,6 @@ import invalidTest from "../assets/takePhotos/invalidTest.png";
 import negativeTest from "../assets/takePhotos/negativeTest.png";
 import positiveTest from "../assets/takePhotos/positiveTest.png";
 import Link from "next/link";
-// import Modal from "react-modal";
 
 
 export const TakePhoto = () => {

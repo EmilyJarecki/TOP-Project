@@ -6,36 +6,36 @@ import Image from 'next/image'
 
 const AdditionalResources = () => {
 return (
-  <div>
-  <div className="flex justify-center items-center">
-  <div className="flex justify-between flex-wrap">
-    <div className="relative">
-      <Image
-        src={Frame13}
-        className="rounded-lg  ml-4 mb-4 w-40 h-28"
-      ></Image>
+  <>
+    <div className="flex justify-center items-center">
+      <div className="flex justify-between flex-wrap">
+        {/* <div className="relative"> */}
+          <Image
+            src={Frame13}
+            className="rounded-lg mx-4 my-4 h-32 w-auto"
+          ></Image>
+        {/* </div> */}
+        {/* <div className="relative"> */}
+          <Image
+            src={Frame14}
+            className="rounded-lg mx-4  my-4 h-32 w-auto"
+          ></Image>
+        {/* </div> */}
+        {/* <div className="relative"> */}
+          <Image
+            src={Frame15}
+            className="rounded-lg my-4 mx-4 mb-4 h-32 w-auto"
+          ></Image>
+        {/* </div> */}
+      </div>
     </div>
-    <div className="relative">
+    <div className="justify-center ml-6">
       <Image
-        src={Frame14}
-        className="rounded-lg mr-4  mb-4  w-40 h-28"
-      ></Image>
+        src={video}
+        className="w-80 h-44 mt-6"
+      />
     </div>
-    <div className="relative">
-      <Image
-        src={Frame15}
-        className="rounded-lg mt-8 ml-4 mb-4 w-40 h-28"
-      ></Image>
-    </div>
-  </div>
-</div>
-<div className="justify-center ml-6">
-  <Image
-    src={video}
-    className="w-80 h-44 mt-6"
-  />
-</div>
-</div>
+  </>
 )
 }
 export default AdditionalResources

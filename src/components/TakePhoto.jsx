@@ -5,6 +5,7 @@ import Image from "next/image";
 import invalidTest from "../assets/takePhotos/invalidTest.png";
 import negativeTest from "../assets/takePhotos/negativeTest.png";
 import positiveTest from "../assets/takePhotos/positiveTest.png";
+import Link from "next/link";
 
 
 export const TakePhoto = () => {
@@ -21,11 +22,11 @@ export const TakePhoto = () => {
       <div className="flex flex-col items-center">
         <p className="text-hych-title-blue font-bold">Compare your sample results to the current results below.</p>
         <br />
-        <p className="text-hych-subheading-blue underline">Positive Result</p>
+        <p className="text-hych-subheading-blue">Positive Result</p>
         <Image src={positiveTest} alt="postivie covid-19 result"/>
-        <p className="text-hych-subheading-blue underline">Negative Result</p>
+        <p className="text-hych-subheading-blue">Negative Result</p>
         <Image src={negativeTest} alt="negative covid-19 result" />
-        <p className="text-hych-subheading-blue underline">Invalid Result</p>
+        <p className="text-hych-subheading-blue">Invalid Result</p>
         <Image src={invalidTest} alt="invalid covid-19 result" />
         <br />
         <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
@@ -39,7 +40,9 @@ export const TakePhoto = () => {
           <img className="mt-4" src={capturedImage} alt="Captured" />
         )}
       </div>
-        <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">Complete</button>
+        <Link href="/symptoms">
+          <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">Complete</button>
+        </Link>
     </div>
   );
 };

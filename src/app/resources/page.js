@@ -12,7 +12,7 @@ export default function Resources() {
           Resources
         </h1>
         <AdditionalResources />
-        <div className="justify-center mt-4 text-center h-screen">
+        <div className="justify-center mt-4 text-center">
           <h2 className="text-lg font-semibold mt-10 text-blue-900">
             You&apos;re part of the future of testing.
           </h2>

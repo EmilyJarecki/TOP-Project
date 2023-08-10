@@ -1,6 +1,6 @@
-import React from 'react'
-// import Article from './Article'
-import Image from 'next/image';
+import React from "react"
+// import Article from "./Article"
+import Image from "next/image";
 import cbs from "../assets/cbs.png";
 import abc from "../assets/abc.png";
 import nih from "../assets/nih.png";
@@ -12,8 +12,8 @@ import marketwatch from "../assets/marketwatch.png";
 
 const ArticleList = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <div className="grid grid-cols-2 gap-x-7 gap-y-4">
+    <div className="flex justify-center items-center">
+      <div className="grid gap-x-7 gap-y-4 grid-cols-4 md:grid-cols-2">
         <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
           <Image src={abc} alt="abc article"></Image>
         </div>

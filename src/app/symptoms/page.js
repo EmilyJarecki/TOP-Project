@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PickSymptoms from "@/components/PickSymptoms"
+import Page1 from "@/components/Page1"
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 
 export default function Symptoms() {
@@ -9,7 +9,7 @@ export default function Symptoms() {
         <>
             <div className="bg-[#E4EAEE]">
                 <Header />
-                <PickSymptoms />
+                <Page1 />
                 <AdditionalResourcesCarousel />
                 <Footer/>
             </div>

@@ -17,9 +17,9 @@ function SiteInfo() {
         more and more popular, America needed a way for people to be able to report their results.</p>
         <br />
         <div>
-          <p className="text-2xl text-hych-title-blue">NIH's RADx® MARS lets you contribute to America's public health</p>
+          <p className="text-2xl text-hych-title-blue">NIH&apos;s RADx® MARS lets you contribute to America&apos;s public health</p>
           <br />
-          <p className="text-sm text-hych-subheading-blue">That's what the <span className="underline text-blue-500"><Link href="https://www.nibib.nih.gov/covid-19/radx-tech-program/mars#learnmore" 
+          <p className="text-sm text-hych-subheading-blue">That&apos;s what the <span className="underline text-blue-500"><Link href="https://www.nibib.nih.gov/covid-19/radx-tech-program/mars#learnmore" 
               target="_blank">NIH RADx® MARS</Link></span>
               program has made. The MARS team built a system that puts 
               at-home test results into a standard format used by health care professionals. That 
@@ -29,7 +29,7 @@ function SiteInfo() {
               as we feel comfortable sharing.</p>
               <br />
               <div>
-                <p className="text-2xl text-hych-title-blue">You're part of the future of at-home testing in the US</p>
+                <p className="text-2xl text-hych-title-blue">You&apos;re part of the future of at-home testing in the US</p>
                 <br />
                 <p className="text-sm text-hych-subheading-blue">COVID-19 was the first infectious disease for which the U.S. had over-the-counter 
                   at-home tests. But at-home tests for other diseases like influenza and respiratory 

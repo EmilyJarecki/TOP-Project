@@ -6,7 +6,7 @@ import Privacy from "@/app/privacy/page";
 
 const Footer = () => {
   return (
-    <div className="relative flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-[350px]">
       <div className="bg-footer absolute bottom-0 text-white px-14 py-4">
         <div className="flex justify-center mb-2 ">
           <Image className="w-32" src={logo} alt="makemytestcount.org"></Image>
@@ -27,10 +27,10 @@ const Footer = () => {
             general summary of information for the public. It is not intended to
             take the place of either the written law or regulations. NIBIB does
             not endorse or recommend any commercial products or services.
-            Inclusion of an author's views or opinions on the website does not
+            Inclusion of an authors views or opinions on the website does not
             mean they state or reflect those of NIBIB, NIH, or the U.S.
             Government, and private parties may not use them for advertising or
-            product endorsement purposes.
+            product endorsement purposes.&apos;
           </p>
         </div>
         <SocialMedia />

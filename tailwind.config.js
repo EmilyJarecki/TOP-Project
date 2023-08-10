@@ -16,6 +16,7 @@ module.exports = {
         "hych-title-blue": "#243C6C",
         "hych-subheading-blue": "#30528F",
         footer: "#243558",
+        inputfield: "#F4F6F8",
       },
       fontFamily: {
         rubik: ["var(--rubik-font)"],
@@ -40,6 +41,22 @@ module.exports = {
           "2xl": "6rem",
         },
       },
+    },
+    screens: {
+      '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+
+      'xl': {'max': '1400px'},
+      // => @media (max-width: 1400px) { ... }
+
+      'lg': {'max': '1000px'},
+      // => @media (max-width: 1000px) { ... }
+
+      'md': {'max': '730px'},
+      // => @media (max-width: 730px) { ... }
+
+      'sm': {'max': '500px'},
+      // => @media (max-width: 500px) { ... }
     },
   },
   plugins: [],

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import useEmblaCarousel from 'embla-carousel-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import holdingHands from '../assets/addtl-rsrc-holding-hands.png';
-import codeScreen from '../assets/addtl-rsrc-code.png';
-import covidTest from '../assets/addtl-rsrc-testing.png';
-import { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from "embla-carousel-react";
+import Link from "next/link";
+import Image from "next/image";
+import holdingHands from "../assets/addtl-rsrc-holding-hands.png";
+import codeScreen from "../assets/addtl-rsrc-code.png";
+import covidTest from "../assets/addtl-rsrc-testing.png";
+import { useCallback, useEffect, useState } from "react";
 
 export default function AdditionalResourcesCarousel() {
 
@@ -21,7 +21,7 @@ export default function AdditionalResourcesCarousel() {
 
     useEffect(() => {
 
-        if (emblaApi) emblaApi.on('select', onSelect);
+        if (emblaApi) emblaApi.on("select", onSelect);
 
     }, [emblaApi]);
 
@@ -29,7 +29,7 @@ export default function AdditionalResourcesCarousel() {
 
     return (
 
-        <div className="mx-auto max-w-sm px-3.5">
+        <div className="mx-auto  px-3.5 pt-[25px] bg-[#E4EAEE]">
             <div className="flex justify-center gap-1.5">
                 <div className={`${carouselIndex == 0 || carouselIndex == 3 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
                 <div className={`${carouselIndex == 1 || carouselIndex == 4 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
@@ -46,7 +46,7 @@ export default function AdditionalResourcesCarousel() {
                             <Link href="/faq">
                                 <div className="rounded-xl overflow-hidden">
                                     <Image src={holdingHands} alt="holding-hands-image"></Image>
-                                    <p className="text-sm font-medium leading-none p-2 bg-white">We're here to support you</p>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">We&apos;re here to support you</p>
                                 </div>
                             </Link>
                         </div>
@@ -66,7 +66,7 @@ export default function AdditionalResourcesCarousel() {
                             <Link href="/about">
                                 <div className="rounded-xl overflow-hidden">
                                     <Image src={covidTest} alt="holding-hands-image"></Image>
-                                    <p className="text-sm font-medium leading-none p-2 bg-white">You're part of the future of testing</p>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">You&apos;re part of the future of testing</p>
                                 </div>
                             </Link>
                         </div>
@@ -76,7 +76,7 @@ export default function AdditionalResourcesCarousel() {
                             <Link href="/faq">
                                 <div className="rounded-xl overflow-hidden">
                                     <Image src={holdingHands} alt="holding-hands-image"></Image>
-                                    <p className="text-sm font-medium leading-none p-2 bg-white">We're here to support you</p>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">We&apos;re here to support you</p>
                                 </div>
                             </Link>
                         </div>
@@ -96,7 +96,7 @@ export default function AdditionalResourcesCarousel() {
                             <Link href="/about">
                                 <div className="rounded-xl overflow-hidden">
                                     <Image src={covidTest} alt="holding-hands-image"></Image>
-                                    <p className="text-sm font-medium leading-none p-2 bg-white">You're part of the future of testing</p>
+                                    <p className="text-sm font-medium leading-none p-2 bg-white">You&apos;re part of the future of testing</p>
                                 </div>
                             </Link>
                         </div>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import Webcam from "react-webcam";
 import Image from "next/image";
 import invalidTest from "../assets/takePhotos/invalidTest.png";
@@ -25,7 +25,7 @@ export const TakePhoto = () => {
   };
 
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = useCallback(() => {
     setFacingMode(
       prevState =>
         prevState === FACING_MODE_USER

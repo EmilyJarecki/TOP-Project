@@ -1,20 +1,14 @@
 'use client'
 import { useState } from 'react';
 import Modal from 'react-modal';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Inter, Rubik } from 'next/font/google';
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HowYouCanHelp from '@/components/HowYouCanHelp';
-
 import map from "../assets/map.png"
 import family from "../assets/family.png"
-
-
-
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 import TakePhoto from '@/components/TakePhoto';
 

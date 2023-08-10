@@ -6,6 +6,7 @@ import invalidTest from "../assets/takePhotos/invalidTest.png";
 import negativeTest from "../assets/takePhotos/negativeTest.png";
 import positiveTest from "../assets/takePhotos/positiveTest.png";
 import Link from "next/link";
+// import Modal from "react-modal";
 
 
 export const TakePhoto = () => {
@@ -40,7 +41,7 @@ export const TakePhoto = () => {
           <img className="mt-4" src={capturedImage} alt="Captured" />
         )}
       </div>
-        <Link href="/">
+        <Link href="/symptoms">
           <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">Complete</button>
         </Link>
     </div>

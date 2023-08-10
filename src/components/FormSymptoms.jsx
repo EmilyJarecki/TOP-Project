@@ -1,4 +1,5 @@
 "use client";
+import mongoose from 'mongoose';
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -16,8 +17,8 @@ const FormSymptoms = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAddressOpen, setAddressOpen] = useState(false);
 
-  const router = useRouter();
-  const values = router.query;
+  // const formValuesString = localStorage.getItem('formValues');
+  // const formValues = JSON.parse(formValuesString);
 
   const commonLabel = "text-blue-900 flex mb-1";
   const errorMessage = "text-red-600 text-sm";
@@ -168,6 +169,7 @@ const FormSymptoms = () => {
 
   const handleSubmit = async (values2, { resetForm }) => {
     setIsSubmitting(true);
+    // const combinedFormData = { ...formValues, ...values2 };
     try {
       const response = await fetch(
         "https://top-backend-739f5c08dc02.herokuapp.com/symptoms",
@@ -182,11 +184,10 @@ const FormSymptoms = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const combinedFormData = { values, values2 };
       setIsSubmitting(false);
+      setIsOpen(true);
       resetForm();
-      // combinedFormData();
-      console.log(combinedFormData);
+      // localStorage.removeItem('formValues');
       console.log(values2);
     } catch (error) {
       console.error("There was an error!", error);

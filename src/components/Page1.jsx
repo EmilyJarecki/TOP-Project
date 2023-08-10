@@ -128,7 +128,7 @@ const Page1 = () => {
         <Formik initialValues={{}}>
           {({ values, setFieldValue }) => (
             <Form>
-              <div className='grid grid-cols-3 m-4 shadow-slate-900'>
+              <div className='grid grid-cols-3 m-4 shadow-slate-900 place-items-center max-w-[750px] mx-auto'>
                 {symptomsData.map((item) => (
                   <button className={`w-24 m-1 h-24 relative rounded-lg flex justify-center ${
                     clickedButtons.includes(item.id) ? 'bg-[#8eaadd]' : 'bg-white hover:bg-[#8eaadd]'

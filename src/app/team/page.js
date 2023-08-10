@@ -14,7 +14,7 @@ export default function Team() {
         <br />
         <center>
             <p className="MTT"className="text-3xl font-medium flex place-content-center text-hych-title-blue">MEET THE TEAM</p>
-            <p className='statement'>"INSERT STATEMENT".
+            <p className='statement'>"In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards".
                 <br></br>
                 <br></br>
                 This website was made through the collaborative effort of UX, software engineering, and data teams to help focus on capturing harmonized data from in-vitro take-home Covid-19 diagnostics through open-sourced federal data.</p>
@@ -157,18 +157,6 @@ export default function Team() {
 
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg">
-                    <img src="https://media.licdn.com/dms/image/D5635AQFI3K9DopHFWg/profile-framedphoto-shrink_400_400/0/1659551186479?e=1691978400&v=beta&t=eLi-DGcf2ZjWN3UjzLVT9Sg-Ch5tScx_wlHwlpRUhfs" alt="" class="rounded-t-lg" />
-                    <div class="p-6">
-                        <h2 class="font-bold mb-2 text-2xl text-black-800">Justin Nola
-                        </h2>
-                        <p class="text-black-700 mb-2">UX/UI Researcher</p>
-                        <a target="_blank" href="" class="text-black-600 hover:text-black-500 underline text-sm">Download Resume</a>
-
-                        <a className='Link' target="_blank" href="https://www.linkedin.com/in/justinnola/" class="text-black-600 hover:text-black-500 underline text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg></a>
-                    </div>
-                </div>
-
             </div>
             <div class="grid grid-cols-6 gap-4 mb-8 w-full ">
                 <div class="bg-white rounded-lg shadow-lg">

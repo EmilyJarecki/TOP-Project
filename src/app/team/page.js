@@ -201,8 +201,8 @@ export default function Team() {
             </div>
 
 
-            <h1 className='thanks' >Thank You</h1>
-            <h2 className='message'>A special thank you to The Opportunity Project 2023, General Assembly, and the US Census Bureau for creating this chance for us to showcase our skills.</h2>
+            <h1 className="thanks" >Thank You</h1>
+            <h2 className="message">A special thank you to The Opportunity Project 2023, General Assembly, and the US Census Bureau for creating this chance for us to showcase our skills.</h2>
         <Footer />
         </>
 

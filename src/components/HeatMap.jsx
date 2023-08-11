@@ -1,6 +1,11 @@
+'use client'
+import PositivesCounter from './PositivesCounter';
+import { useState } from 'react';
 import { Chart } from 'react-google-charts';
 import { stateData } from '@/heatMapData';
 import { Inter } from 'next/font/google';
+
+let stateDataCount = 0;
 
 const options = {
     region: 'US',
@@ -13,12 +18,28 @@ const options = {
     tooltip: { textStyle: { fontName: 'Inter', bold: false } }
 };
 
+
+async function countAllPositives() {
+
+    for (let i = 1; i < stateData.length; i++) {
+
+        stateDataCount = stateDataCount + stateData[i][1]
+
+    };
+
+}
+
 export default function HeatMap() {
+
+    const [positivesCount, setPositivesCount] = useState(stateDataCount);
 
     return (
 
         <>
-            <Chart chartType="GeoChart" data={stateData} options={options}></Chart>
+            <PositivesCounter count={stateDataCount}></PositivesCounter>
+            <div className="pl-10">
+                <Chart chartType="GeoChart" data={stateData} options={options}></Chart>
+            </div>
         </>
 
     )

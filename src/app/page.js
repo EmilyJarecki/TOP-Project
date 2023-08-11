@@ -34,7 +34,6 @@ export default function Home() {
       <Header />
       {/* <Landing /> */}
       <div className="flex flex-col items-center justify-center ">
-        <p className="bg-[#5B83CB] text-[#FAFBFF] text-[11.25px] mt-[42px] mb-[24px] py-[4px] px-[12px] rounded-full">12,345 positive tests today</p>
         <HeatMap></HeatMap>
         {/* <Image src={map} alt='map of the united states'></Image> */}
       </div>

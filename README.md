@@ -1,14 +1,12 @@
 # The Opportunity Project 2023: Covid Test Reporting
 
-(add screenshots)
-
-## [Launch our app 📱](https://top-project.vercel.app/)
+> ## [Launch our app 📱](https://top-project.vercel.app/)
 
 ### [The Opportunity Project 2023 ](https://opportunity.census.gov/sprints/fda-diagnostic/)
 
 The Opportunity Project facilitates 12-week product development cycles (called “sprints”) that pull together innovators from every sector. Tech teams join a sprint to build data-powered solutions to critical problems facing the public. Then, we match them with subject-matter experts, who offer valuable information and feedback.
 
-The Challenge:
+*The Challenge:*
 
 🦠 In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards.
 

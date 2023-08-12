@@ -34,7 +34,7 @@ The Opportunity Project facilitates 12-week product development cycles (called â
 ![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza](https://www.linkedin.com/in/ralph-john-rezza/)
 
 #### UI/UX 
-![linkedin logo](/src/assets/linkedin.png) [Kelly Kuykendall](https://www.linkedin.com/in/kelly-kuykendall-pdx/)
+![linkedin logo](/src/assets/linkedin.png) [Kelly Kuykendall](https://www.linkedin.com/in/kelly-kuykendall-pdx/)<br/>
 ![linkedin logo](/src/assets/linkedin.png) [Farnoosh Sharbafi](https://www.linkedin.com/in/farnoosh-sharbafi/)
 
 #### Data Science Lead

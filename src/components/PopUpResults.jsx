@@ -10,12 +10,13 @@ import covidImg1 from "../assets/popUpResults/covidImg1.jpg"
 
 function PopUpResults() {
   return (
-    <div className="text-hych-title-blue container text-center h-max">
+    <div className="flex justify-center">
+    <div className="text-hych-title-blue w-[40%] sm:w-[100%] md:w-[60%] text-center h-max">
 
-      <div>
+      <div >
         <Image src={covidImg1} alt="covid" className="opacity-60" layout="fill" objectFit="cover">
         </Image>
-        <div className="opacity-90 bg-white">
+        <div className="opacity-90 bg-white ">
           <div>
               <p className="text-1xl font-semibold flex place-content-center">Your Results Have Been Submitted!</p>
             <div>
@@ -55,6 +56,7 @@ function PopUpResults() {
             </div>
           </div>
         </div>
+    </div>
     </div>
   )
 }

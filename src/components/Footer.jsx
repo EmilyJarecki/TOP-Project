@@ -6,7 +6,7 @@ import Privacy from "@/app/privacy/page";
 
 const Footer = () => {
   return (
-    <div className="relative flex flex-col min-h-[350px]">
+    <div className="relative flex flex-col min-h-[280px] bg-[#E4EAEE]">
       <div className="bg-footer absolute bottom-0 text-white px-14 py-4">
         <div className="flex justify-center mb-2 ">
           <Image className="w-32" src={logo} alt="makemytestcount.org"></Image>

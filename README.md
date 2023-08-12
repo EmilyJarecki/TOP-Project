@@ -1,10 +1,10 @@
-## The Opportunity Project 2023: Covid Test Reporting
+# The Opportunity Project 2023: Covid Test Reporting
 
 (add screenshots)
 
-###[Launch our app 📱](https://top-project.vercel.app/)
+## [Launch our app 📱](https://top-project.vercel.app/)
 
-####[The Opportunity Project 2023 ](https://opportunity.census.gov/sprints/fda-diagnostic/)
+### [The Opportunity Project 2023 ](https://opportunity.census.gov/sprints/fda-diagnostic/)
 
 The Opportunity Project facilitates 12-week product development cycles (called “sprints”) that pull together innovators from every sector. Tech teams join a sprint to build data-powered solutions to critical problems facing the public. Then, we match them with subject-matter experts, who offer valuable information and feedback.
 
@@ -14,10 +14,10 @@ The Challenge:
 
 > [Planning materials on Trello ✨](https://trello.com/b/ofrxxDPK/covid-test-data-site)<br/>
 
-###Contributors
+## Contributors
 
-####Project Managers
-![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza (UI/UX)](https://www.linkedin.com/in/ralph-john-rezza/)
+### Project Managers
+![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza (UI/UX)](https://www.linkedin.com/in/ralph-john-rezza/)<br/>
 ![github logo](/src/assets/github.png) [Ceina Ellison (SE)](https://github.com/xcbhx)<br/>
 
 #### Software Engineering Lead
@@ -36,6 +36,8 @@ The Challenge:
 ![linkedin logo](/src/assets/linkedin.png) [Ralph Rezza](https://www.linkedin.com/in/ralph-john-rezza/)
 
 #### UI/UX 
+![linkedin logo](/src/assets/linkedin.png) [Kelly Kuykendall](https://www.linkedin.com/in/kelly-kuykendall-pdx/)
+![linkedin logo](/src/assets/linkedin.png) [Farnoosh Sharbafi](https://www.linkedin.com/in/farnoosh-sharbafi/)
 
 #### Data Science Lead
 ![linkedin logo](/src/assets/linkedin.png) [Bekzod Tolipov](https://www.linkedin.com/in/bekzod-tolipov/)<br/>
@@ -46,9 +48,9 @@ The Challenge:
 
 ### 🗜️ Technologies Used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)<br />
-![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)<br />
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)<br />
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)<br />
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)<br/>
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)<br />
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)<br />

@@ -13,8 +13,8 @@ export default function Team() {
         <Header />
         <br />
         <center>
-            <p className="MTT"className="text-3xl font-medium flex place-content-center text-hych-title-blue">MEET THE TEAM</p>
-            <p className='statement'>"In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards".
+            <p className="MTT text-3xl font-medium flex place-content-center text-hych-title-blue">MEET THE TEAM</p>
+            <p className="statement">In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards.
                 <br></br>
                 <br></br>
                 This website was made through the collaborative effort of UX, software engineering, and data teams to help focus on capturing harmonized data from in-vitro take-home Covid-19 diagnostics through open-sourced federal data.</p>

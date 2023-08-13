@@ -15,7 +15,8 @@ const options = {
     resolution: 'provinces',
     legend: 'none',
     colorAxis: { colors: ['#DCE0EB', '#385FA4', '#243C6C'] },
-    tooltip: { textStyle: { fontName: 'Inter', bold: false } }
+    tooltip: { textStyle: { fontName: 'Inter', bold: false } },
+    backgroundColor: '#E4EAEE'
 };
 
 for (let i = 1; i < stateData.length; i++) {
@@ -30,7 +31,7 @@ export default function HeatMap() {
 
     useEffect(() => {
 
-        fetch("http://localhost:4000/results")
+        fetch("https://top-backend-739f5c08dc02.herokuapp.com/results")
             .then(res => res.json())
             .then(res => setPositivesCount(stateDataCount + res.res));
 

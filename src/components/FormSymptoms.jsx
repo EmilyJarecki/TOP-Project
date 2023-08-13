@@ -197,7 +197,8 @@ const FormSymptoms = () => {
   };
 
   return (
-    <div className="mx-12 my-8">
+    <div className="flex justify-center">
+    <div className="mx-12 my-8 w-[100%] sm:w-[80%] md:w-[75%] lg:w-[55%] xl:w-[55%] 2xl:w-[30%]">
       <Formik
         // page1Values={page1Values}
         initialValues={initialValues2}
@@ -560,6 +561,7 @@ const FormSymptoms = () => {
           <PopUpResults />
         </Modal>
       )}
+    </div>
     </div>
   );
 };

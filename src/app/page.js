@@ -11,11 +11,11 @@ import map from "../assets/map.png"
 import family from "../assets/family.png"
 import AdditionalResourcesCarousel from '@/components/AdditionalResourcesCarousel';
 import TakePhoto from '@/components/TakePhoto';
+import HeatMap from '@/components/HeatMap';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--rubik-font' });
 
 const inter = Inter({ subsets: ['latin'], variable: '--inter-font' });
-
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +29,11 @@ export default function Home() {
   };
 
   return (
-    <main className={`${rubik.variable} ${inter.variable} `}>
+    <main className={`${rubik.variable} ${inter.variable} bg-[#E4EAEE]`}>
       <Header />
       <div className="flex flex-row-reverse md:flex-col items-center justify-center bg-[#E4EAEE]">
         <div className="flex flex-col items-center justify-center ">
-          <p className="bg-[#5B83CB] text-[#FAFBFF] text-[11.25px] mt-[42px] mb-[24px] py-[4px] px-[12px] rounded-full">12,345 positive tests today</p>
-          <Image src={map} alt='map of the united states'></Image>
+          <HeatMap></HeatMap>
         </div>
         <div className='flex flex-col items-center justify-center font-bold text-[#30528F]' >
           <Link href='/symptoms'>
@@ -63,8 +62,8 @@ export default function Home() {
         </Link>
         <Link href='/symptoms2'>
           <button className='shadow-md rounded-xl px-20 my-3'>Negative</button>
-        </Link>      
-          <button className='shadow-md rounded-xl px-20 my-3' onClick={handleModalOpen}>Take a Photo to Check!</button>
+        </Link>
+        <button className='shadow-md rounded-xl px-20 my-3' onClick={handleModalOpen}>Take a Photo to Check!</button>
       </div>
       <Modal isOpen={isOpen} onRequestClose={handleModalClose}>
         <TakePhoto />
@@ -75,7 +74,7 @@ export default function Home() {
       <HowYouCanHelp></HowYouCanHelp> */}
 
       <AdditionalResourcesCarousel></AdditionalResourcesCarousel>
-      <p className="text-center font-bold text-[#385FA4] text-[30px] pt-20 bg-[#E4EAEE]">Together, We Can Make A Difference</p>
+      <p className="text-center font-bold text-[#385FA4] text-[30px] pt-20 bg-[#E4EAEE] sm:text-xl sm:pt-10 sm:pb-6">Together, We Can Make A Difference</p>
       <Footer />
     </main>
 

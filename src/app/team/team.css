@@ -1,37 +1,49 @@
 .general {
-    font-weight: 400;
-    font-size: 50px;
-  }
-  
-  .top {
-    font-size: 50px;
-    font-weight: 400;
-  }
-  
-  .data {
-    font-size: 50px;
-    font-weight: 400;
-  }
-  
-  .ux {
-    font-size: 50px;
-    font-weight: 400;
-  }
-  
-  .thanks {
-    font-size: 50px;
-    font-weight: 400;
-  }
-  
-  .message {
-    font-size: 25px;
-    margin-bottom: 35px;
-    margin-top: 10px;
-    /* background-color: aliceblue; */
-  }
-  
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.top {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.data {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.ux {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.thanks {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.message {
+  font-size: 25px;
+  margin-bottom: 35px;
+  margin-top: 10px;
+  /* background-color: aliceblue; */
+}
+
+.statement {
+  color: black;
+  font-size: 25px;
+  background-color: lightblue;
+}
+
+@media only screen and (max-width: 394px) {
+
   .statement {
-    color: black;
-    font-size: 25px;
-    background-color: lightblue;
+    font-size: 12pt;
   }
+
+  .message {
+    font-size: 18pt;
+  }
+
+}

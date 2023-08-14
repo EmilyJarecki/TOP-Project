@@ -14,25 +14,25 @@ const ArticleList = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="grid gap-x-7 gap-y-4 grid-cols-4 md:grid-cols-2">
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={abc} alt="abc article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={cbs} alt="cbs article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={nih} alt="nih article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={time} alt="time article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={verywell} alt="verywell article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={marketwatch} alt="market watch article"></Image>
         </div>
-        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50">
+        <div className="h-56 w-32 shadow-xl border-[1px] border-gray-50 bg-white">
           <Image src={whitehouse} alt="white house article"></Image>
         </div>
       </div>

@@ -18,6 +18,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--inter-font' });
 
 
 export default function Home() {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleModalOpen = () => {

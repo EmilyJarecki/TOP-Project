@@ -1,5 +1,5 @@
 import Link from "next/link";
-import covidImg1 from "../assets/popUpResults/covidImg1.jpg"
+// import covidImg1 from "../assets/popUpResults/covidImg1.jpg"
 
 export default function HowYouCanHelp() {
 

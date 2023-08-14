@@ -1,12 +1,22 @@
+"use client"
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import React from "react";
 import Link from "next/link";
 import './team.css'
 
+import { useState, useEffect } from "react";
+
 
 
 export default function Team() {
+
+    const [width, setWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+        window.addEventListener('resize', () => setWidth(window.innerWidth))
+      }, [])
 
     return (
         <>
@@ -17,9 +27,11 @@ export default function Team() {
                 {/* <p className="statement p-8">In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards.</p> */}
                 <p className="statement px-8 pt-4 pb-12 text-hych-title-blue">This website was made through the collaborative effort of UX, software engineering, and data teams to help focus on capturing harmonized data from in-vitro take-home Covid-19 diagnostics through open-sourced federal data.</p>
             </center>
-            <center>
+            {/* <center> */}
                 <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4 pb-8">
                     
+                    {width > 730 && <div></div>}
+
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://media.licdn.com/dms/image/D4E03AQFZnaZKpRbt3w/profile-displayphoto-shrink_800_800/0/1687213442976?e=1697068800&v=beta&t=Drz2UZuIrm8qxXfLtgml4vd2xt8sYxzv9R6iS2uNpQo" alt="" class="rounded-t-lg" />
                         <div class="p-6">
@@ -67,7 +79,7 @@ export default function Team() {
                     </div>
                 </div>
                 </div>
-                <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4">
+                <div class="grid grid-cols-6 gap-x-4 gap-y-12 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4">
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://avatars.githubusercontent.com/u/104471453?v=4" alt="" class="rounded-t-lg" />
                         <div class="p-6">
@@ -114,6 +126,7 @@ export default function Team() {
 
                         </div>
                     </div>
+
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://media.licdn.com/dms/image/D4E35AQEKkB_7rVfajQ/profile-framedphoto-shrink_200_200/0/1683575700968?e=1692586800&v=beta&t=cgo_2CbjJijbu4uPNrL7VK_jc2-Wh3adsaouhXdT5IM" alt="" class="rounded-t-lg" />
                         <div class="p-6">
@@ -139,17 +152,19 @@ export default function Team() {
                         </div>
                     </div>
 
-                    <br></br>
-                    <br />
-                </div></center>
-            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center ">
+                    {/* <br></br>
+                    <br /> */}
+                {/* </div></center>
+            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center "> */}
+
+                {/* {width < 729 && <div></div>} */}
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_200_200/0/1658339498034?e=1692586800&v=beta&t=kTXXN2F1AeMBL9oNCcuIuuXVDKNsCgQ8Q7OX2RIVg2U" alt="" class="rounded-t-lg" />
                     <div class="p-6 flex flex-col items-center">
-                        <h2 class="font-bold mb-2 text-2xl text-black-800">Farnoosh Sharbafi
+                        <h2 class="font-bold mb-2 text-2xl text-black-800 text-center">Farnoosh Sharbafi
                         </h2>
-                        <p class="text-black-700 mb-2">UX/UI Researcher / Designer</p>
+                        <p class="text-black-700 mb-2 text-center">UX/UI Researcher / Designer</p>
                         <a target="_blank" href="https://drive.google.com/file/d/1NBqNgQgeqAyQBnqUU3xwgf4JBxMz_9FL/view?usp=sharing" class="text-black-600 hover:text-black-500 underline text-sm"> Resume</a>
 
                         <a className='Link' target="_blank" href="https://www.linkedin.com/in/farnoosh-sharbafi/" class="text-black-600 hover:text-black-500 underline text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg></a>
@@ -158,9 +173,9 @@ export default function Team() {
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/C4E03AQH3pRThT4F3jw/profile-displayphoto-shrink_400_400/0/1656212335507?e=1697068800&v=beta&t=Wa3vztC9TjB0_velC4SXWJTzUmmDkgvUZf5jLem6RUs" alt="" class="rounded-t-lg" />
                     <div class="p-6 flex flex-col items-center">
-                        <h2 class="font-bold mb-2 text-2xl text-black-800">Kelly KuyKendall
+                        <h2 class="font-bold mb-2 text-2xl text-black-800 text-center">Kelly KuyKendall
                         </h2>
-                        <p class="text-black-700 mb-2">UX/UI Researcher / Designer</p>
+                        <p class="text-black-700 mb-2 text-center">UX/UI Researcher / Designer</p>
                         <a target="_blank" href="https://docs.google.com/document/d/1T-W8me7SJwA0jL4hSEB5L3bYtxBGfW41JhvGSh-qCeQ/edit?usp=sharing" class="text-black-600 hover:text-black-500 underline text-sm"> Resume</a>
 
                         <a className='Link' target="_blank" href="https://www.linkedin.com/in/kelly-kuykendall-pdx/" class="text-black-600 hover:text-black-500 underline text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg></a>
@@ -171,9 +186,9 @@ export default function Team() {
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D4E35AQHRvt95BkyMOQ/profile-framedphoto-shrink_200_200/0/1680838516041?e=1692586800&v=beta&t=khJpLk7ir7n0PrY01nCHtpmttFCSlsKXiljR3LV6wZk" alt="" class="rounded-t-lg" />
                     <div class="p-6 flex flex-col items-center">
-                        <h2 class="font-bold mb-2 text-2xl text-black-800">Dan Rossetti
+                        <h2 class="font-bold mb-2 text-2xl text-black-800 text-center">Dan Rossetti
                         </h2>
-                        <p class="text-black-700 mb-2">Data Scientist</p>
+                        <p class="text-black-700 mb-2 text-center">Data Scientist</p>
 
                         <a target="_blank" href="https://drive.google.com/file/d/1790tQ8l6JGqhyEcbICJpgNvOjDB__jnp/view?usp=sharing" class="text-black-600 hover:text-black-500 underline text-sm"> Resume</a>
 
@@ -185,9 +200,9 @@ export default function Team() {
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D4E35AQEe4l6qeykx4g/profile-framedphoto-shrink_200_200/0/1676299709761?e=1692586800&v=beta&t=nv3TNZThjZf5Y0mv8pqUG_BGle0XRkYqsKUzybB-hxk" alt="" class="rounded-t-lg" />
                     <div class="p-6 flex flex-col items-center">
-                        <h2 class="font-bold mb-2 text-2xl text-black-800">Ricky Everest
+                        <h2 class="font-bold mb-2 text-2xl text-black-800 text-center">Ricky Everest
                         </h2>
-                        <p class="text-black-700 mb-2">Data Scientist</p>
+                        <p class="text-black-700 mb-2 text-center">Data Scientist</p>
 
                         <a target="_blank" href="https://docs.google.com/document/d/1OY0FT6H_i5l6FqBadGd59z3RArd1eOE3p9osEJYZ29w/edit?usp=drivesdk" class="text-black-600 hover:text-black-500 underline text-sm"> Resume</a>
 

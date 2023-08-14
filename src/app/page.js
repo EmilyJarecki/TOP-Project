@@ -37,11 +37,12 @@ export default function Home() {
           <HeatMap></HeatMap>
         </div>
         <div className='flex flex-col items-center justify-center font-bold text-[#30528F]' >
+          <p className="self-start p-2 pt-4">I Just Tested:</p>
           <Link href='/symptoms'>
-            <button className='shadow-md rounded-xl px-20 my-3 bg-white'>Positive</button>
+            <button className='shadow-md rounded-xl px-20 my-3 w-[339px] bg-white'>Positive</button>
           </Link>
           <Link href='/symptoms2'>
-            <button className='shadow-md rounded-xl px-20 my-3 bg-white'>Negative</button>
+            <button className='shadow-md rounded-xl px-20 my-3 w-[339px] bg-white'>Negative</button>
           </Link>
           <button className='shadow-md rounded-xl px-20 my-3 bg-white' onClick={handleModalOpen}>Take a Photo to Check!</button>
         </div>

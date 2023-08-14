@@ -1,15 +1,18 @@
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import AdditionalResources from '@/components/AdditionalResources'
 import Link from 'next/link'
 
 export default function Resources() {
   return (
     <>
+      <Header />
       <div className="mx-auto max-w-sm border-l-4 border-r-4 border-white">
         <h1 className="flex justify-center mt-10 mb-10 text-3xl text-blue-950">
           Resources
         </h1>
         <AdditionalResources />
-        <div className="justify-center mt-4 text-center h-screen">
+        <div className="justify-center mt-4 text-center">
           <h2 className="text-lg font-semibold mt-10 text-blue-900">
             You&apos;re part of the future of testing.
           </h2>
@@ -36,11 +39,12 @@ export default function Resources() {
           <h3 className="mt-4">
             Up-to-date info helps keep you safe and healthy.
           </h3>
-          <h3 className="mt-4 mb-4 underline decoration-solid">
+          <h3 className="mt-4  underline decoration-solid">
             Learn more at WhenToTest.org
           </h3>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

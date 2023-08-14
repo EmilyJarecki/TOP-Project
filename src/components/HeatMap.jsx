@@ -1,7 +1,7 @@
 'use client'
 import PositivesCounter from './PositivesCounter';
 import { useState, useEffect } from 'react';
-// import { Chart } from 'react-google-charts';
+import { Chart } from 'react-google-charts';
 import { stateData } from '@/heatMapData';
 import { Inter } from 'next/font/google';
 
@@ -42,7 +42,7 @@ export default function HeatMap() {
         <>
             <PositivesCounter count={positivesCount}></PositivesCounter>
             <div className="pl-10">
-                {/* <Chart chartType="GeoChart" data={stateData} options={options}></Chart> */}
+                <Chart chartType="GeoChart" data={stateData} options={options}></Chart>
             </div>
         </>
 

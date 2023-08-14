@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 export default function Resources() {
   return (
-    <>
+    <div className="bg-[#E4EAEE]">
       <Header />
-      <div className="mx-auto max-w-sm border-l-4 border-r-4 border-white">
+      <div className="mx-auto max-w-sm border-l-4 ">
         <h1 className="flex justify-center mt-10 mb-10 text-3xl text-blue-950">
           Resources
         </h1>
@@ -45,6 +45,6 @@ export default function Resources() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }

@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function Faq() {
 
     return (
-        <>
+        <div className="">
         <Header />
         <center>
-            <p className="text-3xl font-medium flex place-content-center text-hych-title-blue">Frequently Asked Questions</p>
+            <p className="text-3xl font-medium flex place-content-center text-hych-title-blue pt-8">Frequently Asked Questions</p>
         </center>
         <br />
         <center>
@@ -65,7 +65,7 @@ export default function Faq() {
             </div>
         </left>
         <Footer />
-        </>
+        </div>
 
     )
 };

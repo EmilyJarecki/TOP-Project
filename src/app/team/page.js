@@ -13,12 +13,13 @@ export default function Team() {
             <Header />
             <div className="bg-[#E4EAEE]">
             <center className="px-6 ">
-                <p className="MTT text-3xl font-medium flex place-content-center text-hych-title-blue">MEET THE TEAM</p>
+                <p className="MTT text-3xl font-medium flex place-content-center pt-8 text-hych-title-blue">MEET THE TEAM</p>
                 {/* <p className="statement p-8">In vitro diagnostic (IVD) tests, such as SARS-CoV-2 or COVID-19 tests, are critical data sources for the healthcare ecosystem. But with the advent of new at-anywhere and non-lab based tests, capturing data these tests generate requires innovation and new digital technologies. We challenge teams to create tools that integrate emerging technologies, such as image capture and IoT, into IVD testing devices, to help easily capture and transmit this information, while doing so in accordance with best practice data standards.</p> */}
                 <p className="statement p-8 text-hych-title-blue">This website was made through the collaborative effort of UX, software engineering, and data teams to help focus on capturing harmonized data from in-vitro take-home Covid-19 diagnostics through open-sourced federal data.</p>
             </center>
             <center>
-                <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4">
+                <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4 pb-8">
+                    
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://media.licdn.com/dms/image/D4E03AQFZnaZKpRbt3w/profile-displayphoto-shrink_800_800/0/1687213442976?e=1697068800&v=beta&t=Drz2UZuIrm8qxXfLtgml4vd2xt8sYxzv9R6iS2uNpQo" alt="" class="rounded-t-lg" />
                         <div class="p-6">
@@ -141,11 +142,11 @@ export default function Team() {
                     <br></br>
                     <br />
                 </div></center>
-            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center">
+            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center ">
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_200_200/0/1658339498034?e=1692586800&v=beta&t=kTXXN2F1AeMBL9oNCcuIuuXVDKNsCgQ8Q7OX2RIVg2U" alt="" class="rounded-t-lg" />
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col items-center">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Farnoosh Sharbafi
                         </h2>
                         <p class="text-black-700 mb-2">UX/UI Researcher / Designer</p>
@@ -156,7 +157,7 @@ export default function Team() {
                 </div>
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/C4E03AQH3pRThT4F3jw/profile-displayphoto-shrink_400_400/0/1656212335507?e=1697068800&v=beta&t=Wa3vztC9TjB0_velC4SXWJTzUmmDkgvUZf5jLem6RUs" alt="" class="rounded-t-lg" />
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col items-center">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Kelly KuyKendall
                         </h2>
                         <p class="text-black-700 mb-2">UX/UI Researcher / Designer</p>
@@ -169,7 +170,7 @@ export default function Team() {
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D4E35AQHRvt95BkyMOQ/profile-framedphoto-shrink_200_200/0/1680838516041?e=1692586800&v=beta&t=khJpLk7ir7n0PrY01nCHtpmttFCSlsKXiljR3LV6wZk" alt="" class="rounded-t-lg" />
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col items-center">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Dan Rossetti
                         </h2>
                         <p class="text-black-700 mb-2">Data Scientist</p>
@@ -183,7 +184,7 @@ export default function Team() {
                 </div>
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D4E35AQEe4l6qeykx4g/profile-framedphoto-shrink_200_200/0/1676299709761?e=1692586800&v=beta&t=nv3TNZThjZf5Y0mv8pqUG_BGle0XRkYqsKUzybB-hxk" alt="" class="rounded-t-lg" />
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col items-center">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Ricky Everest
                         </h2>
                         <p class="text-black-700 mb-2">Data Scientist</p>

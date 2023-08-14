@@ -19,12 +19,12 @@
 }
 
 .thanks {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
 }
 
 .message {
-  font-size: 25px;
+  font-size: 20px;
   /* margin-bottom: 35px;
   margin-top: 10px; */
   /* background-color: aliceblue; */
@@ -32,7 +32,7 @@
 
 .statement {
   /* color: black; */
-  font-size: 25px;
+  font-size: 20px;
   /* background-color: lightblue; */
 }
 

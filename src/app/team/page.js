@@ -6,17 +6,17 @@ import React from "react";
 import Link from "next/link";
 import './team.css'
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 
 
 export default function Team() {
 
-    const [width, setWidth] = useState(window.innerWidth)
+    // const [width, setWidth] = useState(window.innerWidth)
 
-    useEffect(() => {
-        window.addEventListener('resize', () => setWidth(window.innerWidth))
-      }, [])
+    // useEffect(() => {
+    //     window.addEventListener('resize', () => setWidth(window.innerWidth))
+    //   }, [])
 
     return (
         <>
@@ -30,7 +30,7 @@ export default function Team() {
             {/* <center> */}
                 <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4 pb-8">
                     
-                    {width > 730 && <div></div>}
+                    {/* {width > 730 && <div></div>} */}
 
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://media.licdn.com/dms/image/D4E03AQFZnaZKpRbt3w/profile-displayphoto-shrink_800_800/0/1687213442976?e=1697068800&v=beta&t=Drz2UZuIrm8qxXfLtgml4vd2xt8sYxzv9R6iS2uNpQo" alt="" class="rounded-t-lg" />
@@ -157,7 +157,7 @@ export default function Team() {
                 {/* </div></center>
             <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center "> */}
 
-                {width > 730 && <div></div>}    
+                {/* {width > 730 && <div></div>}     */}
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_200_200/0/1658339498034?e=1692586800&v=beta&t=kTXXN2F1AeMBL9oNCcuIuuXVDKNsCgQ8Q7OX2RIVg2U" alt="" class="rounded-t-lg" />

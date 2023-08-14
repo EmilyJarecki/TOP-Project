@@ -11,7 +11,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export default function AdditionalResourcesCarousel() {
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 3 });
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 0 });
     const [carouselIndex, setCarouselIndex] = useState(0);
 
     const onSelect = useCallback((emblaApi, eventName) => {
@@ -30,11 +30,12 @@ export default function AdditionalResourcesCarousel() {
 
     return (
 
-        <div className="mx-auto  px-3.5 pt-20 bg-[#E4EAEE]">
+        <div className="mx-auto  px-3.5 pt-20 bg-[#E4EAEE] max-w-3xl">
             <div className="flex justify-center gap-1.5">
-                <div className={`${carouselIndex == 0 || carouselIndex == 3 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
-                <div className={`${carouselIndex == 1 || carouselIndex == 4 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
-                <div className={`${carouselIndex == 2 || carouselIndex == 5 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 0 || carouselIndex == 4 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 1 || carouselIndex == 5 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 2 || carouselIndex == 6 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
+                <div className={`${carouselIndex == 3 || carouselIndex == 7 ? "bg-hych-subheading-blue" : "bg-gray-300"} h-2.5 w-2.5 rounded-full`}></div>
             </div>
             <div className="flex justify-between mt-2 items-end">
                 <p className="font-bold text-[14pt] tracking-tight">Additional Resources</p>

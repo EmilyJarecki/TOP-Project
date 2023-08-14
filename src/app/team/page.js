@@ -141,7 +141,7 @@ export default function Team() {
                     <br></br>
                     <br />
                 </div></center>
-            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 px-6">
+            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 md:grid-cols-4 px-6 text-center">
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_200_200/0/1658339498034?e=1692586800&v=beta&t=kTXXN2F1AeMBL9oNCcuIuuXVDKNsCgQ8Q7OX2RIVg2U" alt="" class="rounded-t-lg" />
@@ -166,8 +166,6 @@ export default function Team() {
 
                     </div>
                 </div>
-            </div>
-            <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 px-6">
                 
                 <div class="bg-white rounded-lg shadow-lg">
                     <img src="https://media.licdn.com/dms/image/D4E35AQHRvt95BkyMOQ/profile-framedphoto-shrink_200_200/0/1680838516041?e=1692586800&v=beta&t=khJpLk7ir7n0PrY01nCHtpmttFCSlsKXiljR3LV6wZk" alt="" class="rounded-t-lg" />

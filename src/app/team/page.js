@@ -55,7 +55,7 @@ export default function Team() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg">
-                    <img src="https://media.licdn.com/dms/image/D5635AQGaCm6mEApw_w/profile-framedphoto-shrink_400_400/0/1680552187978?e=1691978400&v=beta&t=fa0FvyxM-zfWADJfhCPnKSWOebaIyG0cYw3nn81sCm0" alt="" class="rounded-t-lg" />
+                    <img src="https://media.licdn.com/dms/image/D5635AQGaCm6mEApw_w/profile-framedphoto-shrink_200_200/0/1680552187978?e=1692586800&v=beta&t=DxWCVYGVDShtRT8sSJGnve8Bav7I_URaOy81mEKEZdg" alt="" class="rounded-t-lg" />
                     <div class="p-6">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Bekzod Tolipov
                         </h2>
@@ -90,7 +90,7 @@ export default function Team() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg">
-                        <img src="https://media.licdn.com/dms/image/D4E35AQHsq6AStM61Jw/profile-framedphoto-shrink_400_400/0/1676427305513?e=1691974800&v=beta&t=if6AcwWGNbKYIEOlObcZ9McDanwpmi0KG8tyeJJ4KpM" alt="" class="rounded-t-lg" />
+                        <img src="https://media.licdn.com/dms/image/D4E35AQHsq6AStM61Jw/profile-framedphoto-shrink_200_200/0/1676427305513?e=1692586800&v=beta&t=YirSaYwwSvQHW97dyIE6jYUCx3yDnF6Ex6tt66CKMdM" alt="" class="rounded-t-lg" />
                         <div class="p-6">
                             <h2 class="font-bold mb-2 text-2xl text-black-800">Cindy Amaya
                             </h2>
@@ -102,7 +102,7 @@ export default function Team() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg">
-                        <img src="https://media.licdn.com/dms/image/D5635AQGqUNakNjSlRA/profile-framedphoto-shrink_400_400/0/1687809681975?e=1691978400&v=beta&t=_3_nkrxP_yrizoPTw6ge87Q0hwxSeP-QnwoAhx7emO0" alt="" class="rounded-t-lg" />
+                        <img src="https://media.licdn.com/dms/image/D5603AQGHMUF17TR1uQ/profile-displayphoto-shrink_200_200/0/1675902257269?e=1697673600&v=beta&t=SLyxvzEnr1Ycgje2bsVMY-UEJUyWIC5ohSdJ4RAXuE8" alt="" class="rounded-t-lg" />
                         <div class="p-6">
                             <h2 class="font-bold mb-2 text-2xl text-black-800">Emily Jarecki
                             </h2>
@@ -114,7 +114,7 @@ export default function Team() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg">
-                        <img src="https://media.licdn.com/dms/image/D4E35AQEKkB_7rVfajQ/profile-framedphoto-shrink_400_400/0/1683575700968?e=1691978400&v=beta&t=c0NpEY2H3BmvGYKoKAEd0wy77jEuTNxPQUcW9dwZtI0" alt="" class="rounded-t-lg" />
+                        <img src="https://media.licdn.com/dms/image/D4E35AQEKkB_7rVfajQ/profile-framedphoto-shrink_200_200/0/1683575700968?e=1692586800&v=beta&t=cgo_2CbjJijbu4uPNrL7VK_jc2-Wh3adsaouhXdT5IM" alt="" class="rounded-t-lg" />
                         <div class="p-6">
                             <h2 class="font-bold mb-2 text-2xl text-black-800">Mary Lueder
                             </h2>
@@ -126,7 +126,7 @@ export default function Team() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg">
-                        <img src="https://media.licdn.com/dms/image/D4E35AQHU_UPCnNw3Bg/profile-framedphoto-shrink_400_400/0/1684146356147?e=1691978400&v=beta&t=mfiUCQj7zPP0x2lhMIvKp4gQWybXnGMQK4lf4mRJZso" alt="" class="rounded-t-lg" />
+                        <img src="https://media.licdn.com/dms/image/D4E35AQHU_UPCnNw3Bg/profile-framedphoto-shrink_200_200/0/1684146356147?e=1692586800&v=beta&t=0ovcH0NEyunEswg6g6X1Eo3NHkqZ27TadB0DivFRfKI" alt="" class="rounded-t-lg" />
                         <div class="p-6">
                             <h2 class="font-bold mb-2 text-2xl text-black-800">Youssef Shabo
                             </h2>
@@ -144,7 +144,7 @@ export default function Team() {
             <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 px-6">
                 
                 <div class="bg-white rounded-lg shadow-lg">
-                    <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_400_400/0/1658339498034?e=1691978400&v=beta&t=87ycyeWcs5JDTAgXCqVGJbweK9gWm1Dxtn3KgX1tODQ" alt="" class="rounded-t-lg" />
+                    <img src="https://media.licdn.com/dms/image/D5635AQHz8Ojf6ynD4A/profile-framedphoto-shrink_200_200/0/1658339498034?e=1692586800&v=beta&t=kTXXN2F1AeMBL9oNCcuIuuXVDKNsCgQ8Q7OX2RIVg2U" alt="" class="rounded-t-lg" />
                     <div class="p-6">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Farnoosh Sharbafi
                         </h2>
@@ -170,7 +170,7 @@ export default function Team() {
             <div class="grid grid-cols-6 gap-4 mb-8 w-full sm:grid-cols-2 px-6">
                 
                 <div class="bg-white rounded-lg shadow-lg">
-                    <img src="https://media.licdn.com/dms/image/D4E35AQHRvt95BkyMOQ/profile-framedphoto-shrink_400_400/0/1680838516041?e=1691978400&v=beta&t=qmoCIVfh7MKH6E7tHSDsWSbMfDfqRDdjPVrE31myn8E" alt="" class="rounded-t-lg" />
+                    <img src="https://media.licdn.com/dms/image/D4E35AQHRvt95BkyMOQ/profile-framedphoto-shrink_200_200/0/1680838516041?e=1692586800&v=beta&t=khJpLk7ir7n0PrY01nCHtpmttFCSlsKXiljR3LV6wZk" alt="" class="rounded-t-lg" />
                     <div class="p-6">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Dan Rossetti
                         </h2>
@@ -184,7 +184,7 @@ export default function Team() {
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg">
-                    <img src="https://media.licdn.com/dms/image/D4E35AQEe4l6qeykx4g/profile-framedphoto-shrink_400_400/0/1676299709761?e=1691978400&v=beta&t=hfFHx4E8-99YMse_FPpZjYxjXv3Z_gd4O69HhAqHA2k" alt="" class="rounded-t-lg" />
+                    <img src="https://media.licdn.com/dms/image/D4E35AQEe4l6qeykx4g/profile-framedphoto-shrink_200_200/0/1676299709761?e=1692586800&v=beta&t=nv3TNZThjZf5Y0mv8pqUG_BGle0XRkYqsKUzybB-hxk" alt="" class="rounded-t-lg" />
                     <div class="p-6">
                         <h2 class="font-bold mb-2 text-2xl text-black-800">Ricky Everest
                         </h2>

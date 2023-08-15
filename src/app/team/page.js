@@ -28,9 +28,11 @@ export default function Team() {
                 <p className="statement px-8 pt-4 pb-12 text-hych-title-blue">This website was made through the collaborative effort of UX, software engineering, and data teams to help focus on capturing harmonized data from in-vitro take-home Covid-19 diagnostics through open-sourced federal data.</p>
             </center>
             {/* <center> */}
-                <div class="grid grid-cols-6 gap-4 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4 pb-8">
+                <div className="flex justify-center">
+                <div class="grid grid-cols-4 gap-4 mb-5 w-[67%] px-5 sm:grid-cols-2 md:grid-cols-4 sm:w-full md:w-full pb-8">
                     
                     {/* {width > 730 && <div></div>} */}
+                    
 
                     <div class="bg-white rounded-lg shadow-lg">
                         <img src="https://media.licdn.com/dms/image/D4E03AQFZnaZKpRbt3w/profile-displayphoto-shrink_800_800/0/1687213442976?e=1697068800&v=beta&t=Drz2UZuIrm8qxXfLtgml4vd2xt8sYxzv9R6iS2uNpQo" alt="" class="rounded-t-lg" />
@@ -77,6 +79,7 @@ export default function Team() {
 
                         <a className='Link' target="_blank" href="https://www.linkedin.com/in/bekzod-tolipov/" class="text-black-600 hover:text-black-500 underline text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg></a>
                     </div>
+                </div>
                 </div>
                 </div>
                 <div class="grid grid-cols-6 gap-x-4 gap-y-12 mb-5 w-full px-6 sm:grid-cols-2 md:grid-cols-4">

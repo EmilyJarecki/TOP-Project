@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function Faq() {
 
     return (
-        <>
+        <div className="bg-[#E4EAEE]">
         <Header />
         <center>
-            <p className="text-3xl font-medium flex place-content-center text-hych-title-blue">Frequently Asked Questions</p>
+            <p className="text-3xl font-medium flex place-content-center text-hych-title-blue pt-8">Frequently Asked Questions</p>
         </center>
         <br />
         <center>
@@ -36,7 +36,7 @@ export default function Faq() {
             </p>
         <br />
             <p className="flex justify-center pr-[1.875rem] pb-[1.25rem] text-[13px]  ease-out duration-500 font-rubik font-bold text-hych-subheading-blue leading-none tracking-tight">
-            <button onclick="underlineLinks()"><a href="https://report.makemytestcount.org/?&_ga=2.182742113.636952924.1688858707-1823723452.1688596346#Step01">Want to report a test? It&apos;s easy!</a></button>
+            <a href="/" className="underline">Want to report a test? It&apos;s easy!</a>
             </p>
             
         </center>
@@ -65,7 +65,7 @@ export default function Faq() {
             </div>
         </left>
         <Footer />
-        </>
+        </div>
 
     )
 };

@@ -35,8 +35,8 @@ export const TakePhoto = () => {
   }, []);
 
   return (
-    <div className="container text-center h-max">
-      <div className="flex flex-col items-center">
+    <div className="container text-center flex flex-col items-center ">
+      <div className="w-[40%] lg:w-[55%] md:w-[70%] sm:w-[100%]">
         <p className="text-hych-title-blue font-bold">Compare your sample results to the current results below.</p>
         <br />
         <p className="text-hych-subheading-blue">Positive Result</p>

@@ -57,7 +57,7 @@ const AdditionalResources = () => {
       <Link href="/about">
         <div className="rounded-xl overflow-hidden w-40 shadow-md shadow-[#D9D9D9]">
           <Image src={covidTest} alt="holding-hands-image" className="w-full"></Image>
-          <p className="text-md font-semibold leading-none p-2 bg-[#F5F5F5]">You're part of the future of testing</p>
+          <p className="text-md font-semibold leading-none p-2 bg-[#F5F5F5]">You&apos;re part of the future of testing</p>
         </div>
       </Link>
       <iframe className="w-full h-60" src="https://www.youtube.com/embed/yoZL1BVP9Bs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

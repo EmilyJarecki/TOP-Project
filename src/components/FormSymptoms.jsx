@@ -92,7 +92,7 @@ const FormSymptoms = () => {
     { value: "WY", label: "Wyoming" },
   ];
 
-  const sexOptions = ["Male", "Female"];
+  const sexOptions = ["Male", "Female", "Intersex", "Prefer not to disclose"];
 
   const ageOptions = Array.from({ length: 100 }, (_, index) => index + 1); // Generate age options from 1 to 100
 
@@ -228,7 +228,7 @@ const FormSymptoms = () => {
             <div className="flex justify-between mt-4">
               <div>
                 <label htmlFor="sex" className={classNames(commonLabel, "")}>
-                  Sex:
+                  Sex assigned at birth:
                 </label>
                 <Field
                   as="select"

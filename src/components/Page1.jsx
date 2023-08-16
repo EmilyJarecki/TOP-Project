@@ -63,7 +63,7 @@ const symptomsData = [
     id: "excessiveFatigue"
   },
   {
-    name: "Nausea/Vomiting",
+    name: "Nausea / Vomiting",
     image: Nausea,
     id: "nauseaVomiting"
   },
@@ -107,7 +107,7 @@ const Page1 = () => {
   //   localStorage.setItem('formValues', JSON.stringify(values));
   // };
 
-  const handleButtonClick = ( field, setFieldValue, values) => () => {
+  const handleButtonClick = (field, setFieldValue, values) => () => {
     setFieldValue(field, !values[field]);
     setClickedButtons(prevClickedButtons => {
       if (prevClickedButtons.includes(field)) {
@@ -122,45 +122,44 @@ const Page1 = () => {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-[#30528F]'>
-        <p className='font-semibold'>Page 1 of 2</p>
+        <p className='font-semibold mt-4'>Page 1 of 2</p>
         <p className='font-medium'>What are your symptoms?</p>
       </div>
-        <Formik initialValues={{}}>
-          {({ values, setFieldValue }) => (
-            <Form>
-              <div className='grid grid-cols-3 m-4 shadow-slate-900 place-items-center max-w-[550px] mx-auto'>
-                {symptomsData.map((item) => (
-                  <button className={`w-24 m-1 h-24 relative rounded-lg flex justify-center ${
-                    clickedButtons.includes(item.id) ? 'bg-[#8eaadd]' : 'bg-white hover:bg-[#8eaadd]'
-                  }`}
-                    key={item.id} 
-                    type="button"
-                    onClick={handleButtonClick(item.id, setFieldValue, values)}
-                  >
+      <Formik initialValues={{}}>
+        {({ values, setFieldValue }) => (
+          <Form>
+            <div className='grid grid-cols-3 m-4 shadow-slate-900 place-items-center max-w-[550px] mx-auto'>
+              {symptomsData.map((item) => (
+                <button className={`w-24 m-1 h-24 relative rounded-lg flex justify-center ${clickedButtons.includes(item.id) ? 'bg-[#8eaadd]' : 'bg-white hover:bg-[#8eaadd]'
+                  } overflow-hidden`}
+                  key={item.id}
+                  type="button"
+                  onClick={handleButtonClick(item.id, setFieldValue, values)}
+                >
                   <div className="grid justify-center items-center">
                     <Image
                       className="w-24"
                       src={item.image}
                       alt={item.name}
                     />
-                    <p className="text-sm z-10 absolute bottom-0 text-center w-24 bg-white-500 opacity-80"><span className="">{item.name}</span></p>
+                    <p className="text-sm absolute bottom-0 text-center w-24 opacity-80 bg-white"><span className="">{item.name}</span></p>
                   </div>
-                  </button>
-                ))}
-              </div>
-              <div className='flex items-center justify-center'>
-                <Link href='/symptoms2'>
-                  <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
-                </Link>
-                <Link href='/symptoms2'>
-                  <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]" type="submit">Continue</button>
-                </Link>
-              </div>
-            </Form>
-          )}
-        </Formik>
+                </button>
+              ))}
+            </div>
+            <div className='flex items-center justify-center'>
+              <Link href='/symptoms2'>
+                <button className='rounded-xl mx-3 px-12 text-black bg-white'>Skip</button>
+              </Link>
+              <Link href='/symptoms2'>
+                <button className="rounded-xl mx-3 px-12 text-white bg-[#30528F]" type="submit">Continue</button>
+              </Link>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </>
   );
 };
-  
-  export default Page1;
+
+export default Page1;

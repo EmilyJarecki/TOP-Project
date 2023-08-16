@@ -29,8 +29,9 @@ const FormSymptoms = () => {
     "Asian",
     "Black or African American",
     "Native Hawaiian or Other Pacific Islander",
-    "Two or more races (Not Hispanic or Latino",
-    "White"
+    "White",
+    "Two or more races",
+    "Not listed"
   ];
 
   const ethnicityOptions = [
